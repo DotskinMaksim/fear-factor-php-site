@@ -1,3 +1,5 @@
+/* Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,35 +9,31 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f7f7f7;
-    color: #333;
+    background-image: linear-gradient(to right, white, gray);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 10px;
-    font-weight: bold;
+header, nav {
+    background-image: url('pildid/bg.jpeg');
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
 }
 
 h1 {
     font-size: 36px;
-
-
-}
-
-h2 {
-    font-size: 30px;
-}
-
-h3 {
-    font-size: 24px;
-}
-
-p {
     margin-bottom: 20px;
 }
 
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
 a {
-    color: #007bff;
     text-decoration: none;
 }
 
@@ -43,94 +41,52 @@ a:hover {
     text-decoration: underline;
 }
 
-button,
-input[type="button"],
-input[type="submit"] {
-    cursor: pointer;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.row {
+/* Horizontal Menu */
+nav ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 -10px;
+    justify-content: center;
 }
 
-.col {
-    flex: 1;
-    padding: 0 10px;
+nav ul li {
+    padding: 20px;
 }
 
-@media (max-width: 768px) {
-    .container {
-        width: 100%;
-    }
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Добавление переходных эффектов */
 }
 
+nav ul li a:hover {
+    color: #ffcc00;
+    background-color: rgba(255, 255, 255, 0.1); /* Прозрачный белый фон при наведении */
+}
+
+/* Main Content */
+body {
+    padding: 20px;
+}
+
+/* Form Styles */
 form {
     margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-textarea {
+form input[type="text"],
+form input[type="password"],
+form input[type="number"],
+form input[type="submit"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     margin-bottom: 10px;
-}
-
-input[type="submit"] {
-    width: auto;
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    border: none;
     border-radius: 5px;
-    text-align: center;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
 }
 
 input[type="submit"]:disabled {
@@ -139,26 +95,51 @@ input[type="submit"]:disabled {
     cursor: not-allowed;
 }
 
-/* Стили для меню */
-nav {
-    display: flex; /* Делаем элементы меню горизонтальными */
-    justify-content: center; /* Выравниваем элементы по центру горизонтально */
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-nav ul {
-    list-style-type: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем отступы */
-    margin: 10px;
-}
-
-
-
-nav ul li a {
-    color: #007bff;
-    text-decoration: none;
+table th,
+table td {
     padding: 10px;
+    border: 1px solid #ddd;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.tervitamine {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tervitamine a {
+    color: #ff4500; /* Оранжевый цвет для ссылок */
+}
+
+.meist {
+    text-align: center; /* Центрирование содержимого по горизонтали */
+}
+
+.galerii {
+    display: inline-block; /* Чтобы контейнер занимал только необходимое пространство */
+}
+
+.galerii img {
+    margin: 0 10px; /* Расстояние между изображениями (если нужно) */
+    border-radius: 10px; /* Скругленные углы */
 }

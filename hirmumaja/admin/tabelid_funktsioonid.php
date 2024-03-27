@@ -38,7 +38,7 @@ function kasutajad()
                     </form>
                 </td>
                 <td>
-                    <a href='tabelid.php?kustutaKasutaja=$id'><span style=\"color: red;\">Kustuta</span></a>
+                    <a href='tabelid.php?kustutaKasutaja=$id'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a>
                 </td>
               </tr>";
     }
@@ -58,10 +58,18 @@ function kustutaKasutaja($kasutajaId)
     $delete_kask2->execute();
     $delete_kask2->close();
 
-    $delete_kask3 = $yhendus->prepare("DELETE FROM kasutaja WHERE id=?");
+    $delete_kask3 = $yhendus->prepare("DELETE FROM makseviis WHERE kasutajaId=?");
     $delete_kask3->bind_param("i", $kasutajaId);
     $delete_kask3->execute();
     $delete_kask3->close();
+
+
+    $delete_kask4 = $yhendus->prepare("DELETE FROM kasutaja WHERE id=?");
+    $delete_kask4->bind_param("i", $kasutajaId);
+    $delete_kask4->execute();
+    $delete_kask4->close();
+
+
 
     header("location: tabelid.php?kasutajad");
     exit();
@@ -72,9 +80,9 @@ function piletid()
     global $yhendus;
 
 
-    $select_kask = $yhendus->prepare("SELECT id, kasutajaId, nimi, ostupaev FROM pilet");
+    $select_kask = $yhendus->prepare("SELECT id, kasutajaId, nimi, ostupaev,kehtivKuni,typp FROM pilet");
     $select_kask->execute();
-    $select_kask->bind_result($id, $kasutajaId, $nimi,$ostupaev);
+    $select_kask->bind_result($id, $kasutajaId, $nimi,$ostupaev, $kehtivKuni, $typp);
 
     while ($select_kask->fetch()) {
         echo "<tr>
@@ -82,8 +90,10 @@ function piletid()
                 <td>$kasutajaId</td>
                 <td>$nimi</td>
                 <td>$ostupaev</td>
+                <td>$kehtivKuni</td>
+                <td>$typp</td>
                 <td>
-                    <a href='tabelid.php?kustutaPilet=$id'><span style=\"color: red;\">Kustuta</span></a>
+                    <a href='tabelid.php?kustutaPilet=$id'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a>
                 </td>
               </tr>";
     }
@@ -118,7 +128,7 @@ function hirmumaja()
                 <td>$sisenes</td>
                 <td>$lahkus</td>
                 <td>
-                    <a href='tabelid.php?kustutaHirmumaja=$id'><span style=\"color: red;\">Kustuta</span></a>
+                    <a href='tabelid.php?kustutaHirmumaja=$id'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a>
                 </td>
               </tr>";
     }

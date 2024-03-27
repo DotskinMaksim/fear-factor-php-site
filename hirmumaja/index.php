@@ -8,136 +8,93 @@ if (isset($_GET['code'])) {
     die(highlight_file(__FILE__, 1));
 }
 
-if (isset($_REQUEST["sisenes"])) {
-    sisenes();
-    header("location: index.php");
-    exit();
-}
-
-if (isset($_REQUEST["lahkus"])) {
-    lahkus();
-    header("location: index.php");
-    exit();
-}
-
-
-
 ?>
+<!DOCTYPE html>
+<html lang="et">
 
-    <!DOCTYPE html>
-    <html lang="et">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Hirmude maja</title>
-        <link rel="stylesheet" type="text/css" href="index/index_style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hirmude maja</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="index/index_script.js"></script>
+    <style>
 
-    </head>
+    </style>
 
-    <header>
-        <h1><a href="index.php">Hirmude maja</a></h1>
-    </header>
-    <nav >
+</head>
+<body onload="onLoad()">
+<header>
+    <h1><a href="index.php">Hirmude maja</a></h1>
+</header>
+
+<nav>
+    <ul>
+            <li><a href="sisenes/sisenes.php">Sisenes</a></li>
+
         <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
-            <?php if (!onAdmin()) : ?>
-
-                <ul>
-                    <a href="ostamine/ostamine.php">Osta pilet</a>
-                </ul>
-                <ul>
-                    <a href="index.php?minuPiletid">Minu piletid</a>
-                </ul>
-            <?php else : ?>
-                <ul>
-                    <a href="admin/tabelid.php">Admini paneel</a>
-                </ul>
-
-            <?php endif; ?>
-            <ul>
-                <a href="autoriseerimine/logiValja.php">Log out</a>
-            </ul>
-
+    <?php if (!onAdmin()) : ?>
+            <li><a href="ostamine/ostamine.php">Osta pilet</a></li>
+            <li><a href="ostamine/omaPiletid.php">Minu piletid</a></li>
         <?php else : ?>
-            <ul>
-                <a href="autoriseerimine/logiSisse.php">Log in</a>
-            </ul>
-            <ul>
-                <a href="autoriseerimine/registreerimine.php">Registreeri</a>
-            </ul>
+            <li><a href="admin/tabelid.php">Admini paneel</a></li>
         <?php endif; ?>
-    </nav>
+            <li><a href="autoriseerimine/logiValja.php">Logi välja</a> (<?php echo $_SESSION['kasutajaNimi'];?>)</li>
+        <?php else : ?>
+            <li><a href="autoriseerimine/logiSisse.php">Logi sisse</a></li>
+            <li><a href="autoriseerimine/registreerimine.php">Registreeri</a></li>
 
 
+<?php endif; ?>
+    </ul>
+</nav>
+<header>
+    <h1>Tere tulemast hirmude majja!</h1>
+</header>
 
-    <body onload="onLoad()">
+<main>
+    <section class="tervitamine">
+        <h2>Kirjeldus</h2>
+        <p>Tere tulemast õuduse maailma, kus ootavad teid kõige kohutavamad katsumused. Valmistuge oma piire ja hirme proovile panema</p>
+        <?php if (!isset($_REQUEST['info'])) : ?>
+        <a href="index.php?info">Rohkem info</a>
+        <?php else : ?>
+            <a href="index.php">Sulge</a>
 
-    <?php if (isset($_REQUEST["minuPiletid"]) ): ?>
-        <div>
-            <h2>Minu piletid</h2>
+        <?php endif; ?>
+
+    </section>
+    <?php if (isset($_REQUEST['info'])) : ?>
+
+        <section class="rohkemInfo">
+            <h2>Hirmude Maja</h2>
+            <p>Hirmude Maja pole lihtsalt lõbustuskoht, see on unikaalne maailm, kus kohtuvad teie sügavaimad hirmud ja fantaasiad. Siin igat tuba, igat detaili on loodud selleks, et sukelduda külastajaid uskumatu pinge ja hirmu õhkkonda.</p>
+            <p>Hirmude Maja lugu algas palju aastaid tagasi, kui grupp kirevaid õudusearmastajaid otsustas ühendada oma jõud, et luua midagi tõeliselt ainulaadset. Meie asutajad - inimesed, kes alati unistasid sellest, et jagada oma kiret ühaste armastustega maailmaga. Nad tõid oma ande, loovuse ja aastatepikkuse kogemuse meelelahutustööstusesse, et muuta see unistus tegelikkuseks.</p>
+            <p>Sellest ajast peale on Hirmude Maja saanud ekstreemsete meelelahutuste sümboliks ja kohaks, kuhu inimesed tulevad, et kogeda tõelist adrenaliini ja sukelduda tõelise hirmu õhkkonda. Meie hirmutubade ja näitlejate loodud ainulaadsed stsenaariumid panevad külastajaid tundma end osana elavast kohutavast filmist.</p>
+            <p>Hirmude Maja pole lihtsalt koht, kus saate kohkuda. See on koht, kus saate kogeda uusi emotsioone, ületada oma hirme ja luua mälestusi, mis jäävad teiega igavesti. Tere tulemast maailma, kus reaalsus sulab kokku fantaasiaga ja hirm saab teieks liitlaseks unustamatus seikluses.</p>
+        </section>
 
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Pileti id</th>
-                        <th>Kasutaja id</th>
-                        <th>Kasutaja nimi</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <?php naidataOmaPiletid(); ?>
-
-
-                </tbody>
-            </table>
-            <form action="?" method="post">
-                <input type="submit" value="Sulge">
-            </form>
-        </div>
     <?php endif; ?>
 
-        <div>
-            <?php if (onAdmin()) : ?>
-                <form action="?" method="post">
-                    <h3>Sisenes</h3>
-                    <input type="number" name="piletId" placeholder="Pilet id" id="piletId" oninput="sisenesKontroll()">
-                    <input type="number" name="kasutajaId" placeholder="Kasutaja id" id="kasutajaId" oninput="sisenesKontroll()">
-                    <div id="vastus"></div>
 
-                    <input type="submit" name="sisenes" value="Ok" id="sisenes">
 
-                    <script>
-                        <?php
-                        if (isset($_REQUEST['valePilet'])) { ?>
-                        document.getElementById('vastus').innerHTML = "<span style=\"color: red;\">Vale pilet</span>";
-                        <?php } ?>
-                    </script>
-                </form>
-            <?php endif; ?>
-            <h2>Inimesed hirmude majas</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nimi</th>
-                        <th>Aeg sees</th>
-                        <th></th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php naidataInimesiSisenes(); ?>
-                </tbody>
-            </table>
-
+    <section class="meist">
+        <h2>Meist</h2>
+        <p>Oleme professionaalsetest õudusfilmitegijatest koosnev meeskond, kes loob teie nautimiseks kõige põnevamaid hirmutubasid</p>
+        <!-- Здесь можно добавить фотографии или видео с комнатами страха -->
+        <div class="galerii">
+            <img src="pildid/info1.jpeg" alt="Kirjeldus 1">
+            <img src="pildid/info2.jpeg" alt="Kirjeldus 2">
+            <img src="pildid/info3.jpeg" alt="Kirjeldus 3">
         </div>
-    </body>
+    </section>
+
+    <!-- Дополнительные разделы можно добавить по мере необходимости -->
+</main>
+
+    <?php include 'elemendid/footer.php'; ?>
+</body>
 </html>
 
 

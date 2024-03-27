@@ -34,7 +34,8 @@ if (isset($_REQUEST['tagasi'])){
 
 </head>
 <body onload="onLoadSisse()">
-    <div>
+<main>
+    <section class="logiSisse">
         <h1>Logi sisse</h1>
         <form action="?" method="post">
             Nimi: <input type="text" name="nimi" id="nimi" oninput="logiSisseKontroll()" placeholder="Sisestage..."><br>
@@ -58,6 +59,8 @@ if (isset($_REQUEST['tagasi'])){
                 ?>
             </script>
         </form>
-    </div>
+    </>
+</main>
+    <?php include '../elemendid/footer.php'; ?>
 </body>
 </html>

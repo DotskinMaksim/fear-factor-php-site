@@ -33,7 +33,8 @@ if (isset($_REQUEST['tagasi'])){
 
 </head>
 <body onload="onLoadReg()">
-<div>
+<main>
+<section class="registr">
     <h1>Registreerimine</h1>
     <form action="?" method="post">
         Nimi: <input type="text" name="nimi" id="nimiReg" oninput="registreeriKontroll()" placeholder="Sisestage..."><br>
@@ -65,6 +66,8 @@ if (isset($_REQUEST['tagasi'])){
             <?php } ?>
         </script>
     </form>
-</div>
+</section>
+</main>
+<?php include '../elemendid/footer.php'; ?>
 </body>
 </html>

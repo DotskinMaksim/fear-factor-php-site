@@ -1,6 +1,6 @@
 <?php
 if (isset($_REQUEST['tagasi'])) {
-    header("location: ostamine.php");
+    header("location: ostamine.php?ostukorv");
     exit();
 }
 ?>
@@ -18,7 +18,8 @@ if (isset($_REQUEST['tagasi'])) {
 
 </head>
 <body>
-    <div>
+<main>
+    <section class="leping">
         <h1>Litsentsileping</h1>
         <p>
             <strong>1. Pileti ostmine</strong><br>
@@ -44,12 +45,14 @@ if (isset($_REQUEST['tagasi'])) {
             5.1. Kõik selles lepingus sätestatud õigused ja kohustused kehtivad kõigile klientidele, kes ostavad pileteid "Hirmude maja" külastamiseks.<br>
             5.2. Iga klient kinnitab, et ta on tutvunud ja mõistnud selle lepingu tingimusi enne pileti ostmist "Hirmude maja" külastamiseks.
         </p>
-    </div>
+    </section>
     <div>
         <form action="">
             <input type="submit" name="tagasi" value="Tagasi">
         </form>
     </div>
+</main>
+    <?php include '../elemendid/footer.php'; ?>
 
 </body>
 </html>

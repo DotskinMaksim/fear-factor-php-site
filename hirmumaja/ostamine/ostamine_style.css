@@ -1,0 +1,59 @@
+
+.Piletid {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.PiletDiv {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.PiletHeader {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+}
+
+.PiletKirjeldus {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.PiletKirjeldus p {
+    font-size: 18px;
+}
+
+.PiletInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.PiletInfo span {
+    font-size: 16px;
+}
+
+.PiletLisaNupp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ff6600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+}

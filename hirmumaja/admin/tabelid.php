@@ -38,51 +38,31 @@ if (isset($_GET["kustutaHirmumaja"])) {
     <title>Admini paneel</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
-<header>
-    <h1><a href="../index.php">Hirmude maja</a></h1>
-</header>
-<nav >
-    <ul>
-        <a href="../admin/tabelid.php">Admini paneel</a>
-    </ul>
+<body>
 
+<?php include '../elemendid/header.php'; ?>
+
+<nav>
     <ul>
-        <a href="../autoriseerimine/logiValja.php">Log out</a>
+    <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
+
+    <li><a href="../admin/tabelid.php">Admini paneel</a></li>
+
+    <li><a href="../autoriseerimine/logiValja.php">Log out</a></li>
     </ul>
 
 </nav>
 <nav>
     <ul>
-        <a href="tabelid.php?kasutajad">Kasutajad</a>
-    </ul>
-    <ul>
-        <a href="tabelid.php?piletid">Piletid</a>
-    </ul>
-    <ul>
-        <a href="tabelid.php?hirmumaja">Hirmumaja</a>
+    <li><a href="tabelid.php">Kasutajad</a></li>
+    <li><a href="tabelid.php?piletid">Piletid</a></li>
+    <li><a href="tabelid.php?hirmumaja">Hirmumaja</a></li>
     </ul>
 </nav>
-<body>
-    <?php if (isset($_REQUEST["kasutajad"]) ): ?>
-        <div>
-            <h3>Tabel kasutajad</h3>
+<main>
+    <section class="tabelid">
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Login</th>
-                        <th>Parool</th>
-                        <th>On admin</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php kasutajad(); ?>
-                </tbody>
-            </table>
-        </div>
-    <?php endif; ?>
+
 
     <?php if (isset($_REQUEST["piletid"]) ): ?>
         <div>
@@ -95,6 +75,8 @@ if (isset($_GET["kustutaHirmumaja"])) {
                     <th>KasutajaId</th>
                     <th>Nimi</th>
                     <th>Ostu kuupäev</th>
+                    <th>Kehtiv kuni</th>
+                    <th>Tüpp</th>
                     <th></th>
                 </tr>
                 </thead>
@@ -103,9 +85,8 @@ if (isset($_GET["kustutaHirmumaja"])) {
                 </tbody>
             </table>
         </div>
-    <?php endif; ?>
 
-    <?php if (isset($_REQUEST["hirmumaja"]) ): ?>
+    <?php elseif (isset($_REQUEST["hirmumaja"]) ): ?>
         <div>
             <h3>Tabel hirmumaja</h3>
 
@@ -124,8 +105,30 @@ if (isset($_GET["kustutaHirmumaja"])) {
                 </tbody>
             </table>
         </div>
-    <?php endif; ?>
 
+    <?php else: ?>
+        <div>
+            <h3>Tabel kasutajad</h3>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Login</th>
+                    <th>Parool</th>
+                    <th>On admin</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php kasutajad(); ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif; ?>
+    </section>
+</main>
+    <?php include '../elemendid/footer.php'; ?>
 </body>
 </html>
 

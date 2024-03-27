@@ -41,6 +41,9 @@ function logiSisse()
             $_SESSION['kasutajaNimi'] = $nimi;
             $_SESSION['kasutajaId'] = $id;
             $_SESSION['onAdmin'] = $onAdmin;
+            $_SESSION['soodusPiletiOstukorvis'] =0;
+            $_SESSION['lapsePiletiOstukorvis'] =0;
+            $_SESSION['tavPiletiOstukorvis'] =0;
             header("location: ../index.php");
 
         }
