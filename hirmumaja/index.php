@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once ('funktsioonid.php');
-require_once ('index_funktsioonid.php');
 
 
 if (isset($_GET['code'])) {
