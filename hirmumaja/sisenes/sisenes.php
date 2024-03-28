@@ -40,33 +40,33 @@ if (isset($_REQUEST["lahkus"])) {
 
 </head>
 <body onload="onLoad()">
-<?php include '../elemendid/header.php'; ?>
+<header>
+    <h1><a href="../index.php" class="koduleht-a">Hirmude maja</a></h1>
+
+    <nav>
+        <ul>
+            <li><a href="sisenes.php">Sisenes</a></li>
 
 
-<nav>
-    <ul>
-        <li><a href="sisenes.php">Sisenes</a></li>
+            <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
+                <?php if (!onAdmin()) : ?>
 
 
-        <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
-            <?php if (!onAdmin()) : ?>
-
-
-                <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
-                <li><a href="../ostamine/omaPiletid.php">Minu piletid</a></li>
+                    <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
+                    <li><a href="../ostamine/omaPiletid.php">Minu piletid</a></li>
+                <?php else : ?>
+                    <li><a href="../admin/tabelid.php">Admini paneel</a></li>
+                <?php endif; ?>
+                <li><a href="../autoriseerimine/logiValja.php">Logi välja</a></li>
             <?php else : ?>
-                <li><a href="../admin/tabelid.php">Admini paneel</a></li>
+                <li><a href="../autoriseerimine/logiSisse.php">Logi sisse</a></li>
+                <li><a href="../autoriseerimine/registreerimine.php">Registreeri</a></li>
+
+
             <?php endif; ?>
-            <li><a href="../autoriseerimine/logiValja.php">Log out</a></li>
-        <?php else : ?>
-            <li><a href="../autoriseerimine/logiSisse.php">Log in</a></li>
-            <li><a href="../autoriseerimine/registreerimine.php">Registreeri</a></li>
-
-
-        <?php endif; ?>
-    </ul>
-</nav>
-
+        </ul>
+    </nav>
+</header>
 
 <main>
 <section class="sisenes">

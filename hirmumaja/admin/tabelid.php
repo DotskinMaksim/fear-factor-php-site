@@ -40,25 +40,26 @@ if (isset($_GET["kustutaHirmumaja"])) {
 </head>
 <body>
 
-<?php include '../elemendid/header.php'; ?>
+<header>
+    <h1><a href="../index.php" class="koduleht-a">Hirmude maja</a></h1>
+    <nav>
+        <ul>
+        <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
 
-<nav>
-    <ul>
-    <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
+        <li><a href="../admin/tabelid.php">Admini paneel</a></li>
 
-    <li><a href="../admin/tabelid.php">Admini paneel</a></li>
+        <li><a href="../autoriseerimine/logiValja.php">Log out</a></li>
+        </ul>
 
-    <li><a href="../autoriseerimine/logiValja.php">Log out</a></li>
-    </ul>
-
-</nav>
-<nav>
-    <ul>
-    <li><a href="tabelid.php">Kasutajad</a></li>
-    <li><a href="tabelid.php?piletid">Piletid</a></li>
-    <li><a href="tabelid.php?hirmumaja">Hirmumaja</a></li>
-    </ul>
-</nav>
+    </nav>
+    <nav>
+        <ul>
+        <li><a href="tabelid.php">Kasutajad</a></li>
+        <li><a href="tabelid.php?piletid">Piletid</a></li>
+        <li><a href="tabelid.php?hirmumaja">Hirmumaja</a></li>
+        </ul>
+    </nav>
+</header>
 <main>
     <section class="tabelid">
 

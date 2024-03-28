@@ -19,17 +19,20 @@ require_once ('ostamine_funktsioonid.php');
     <script src="ostamine_script.js" ></script>
 </head>
 <body>
-<?php include '../elemendid/header.php'; ?>
+<header>
+    <h1><a href="../index.php" class="koduleht-a">Hirmude maja</a></h1>
 
-<nav>
-    <ul>
-        <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
-        <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
-        <li><a href="omaPiletid.php">Minu piletid</a></li>
-        <li><a href="../autoriseerimine/logiValja.php">Log out</a></li>
+    <nav>
+        <ul>
+            <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
+            <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
+            <li><a href="omaPiletid.php">Minu piletid</a></li>
+            <li><a href="../autoriseerimine/logiValja.php">Logi välja</a></li>
 
-    </ul>
-</nav>
+        </ul>
+    </nav>
+</header>
+
 <main>
 
 

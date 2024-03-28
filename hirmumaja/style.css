@@ -1,0 +1,75 @@
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Merriweather', serif; /* Изменен шрифт */
+
+}
+body a{
+    color: darkred;
+}
+
+.koduleht-a {
+    text-decoration: none;
+    font-size: 50px;
+    color: indigo;
+
+
+}
+.koduleht-main{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+
+header{
+    background-image: url('pildid/bg2.jpeg');
+
+}
+header h1{
+    padding-left: 60px;
+
+}
+header h1, header nav {
+    display: inline-block; /* Размещаем элементы на одной линии */
+}
+.tervitamine, .kirjeldus div{
+    text-align: center;
+}
+
+.tervitamine{
+    font-family: 'Creepster', cursive; /* Применяем шрифт Creepster */
+}
+
+nav {
+    margin-top: 30px;
+    float: right;
+
+}
+
+/* Добавленные стили для навигационного меню */
+header nav ul {
+    list-style-type: none; /* Убираем маркеры у списка */
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block; /* Размещаем пункты меню горизонтально */
+
+}
+
+header nav ul li a {
+    display: block; /* Превращаем ссылки в блочные элементы */
+    padding: 10px 20px; /* Задаем отступы для пунктов меню */
+    text-decoration: none;
+    color: black; /* Цвет текста ссылок */
+    width: 150px; /* Задаем ширину */
+    font-size: 20px; /* Устанавливаем размер шрифта */
+}
+
+header nav ul li a:hover {
+    background-color: #f0f0f0; /* Цвет фона при наведении на ссылку */
+}
