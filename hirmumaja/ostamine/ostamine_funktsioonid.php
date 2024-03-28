@@ -18,7 +18,7 @@ function ostamine()
             $insert_kask = $yhendus->prepare("INSERT INTO pilet (kasutajaId,nimi,ostupaev,kehtivKuni,typp) VALUES (?,?,?,?,?)");
             $insert_kask->bind_param("issss", $_SESSION['kasutajaId'],$_SESSION['kasutajaNimi'],$praeguneAeg,$polAastatHiljem,$typp);
             if ($insert_kask->execute()) {
-                header("location: ../sisenes.php");
+                header("location: ../ostamine/omaPiletid.php");
             }
             $insert_kask->close();
         }
@@ -31,7 +31,7 @@ function ostamine()
             $insert_kask = $yhendus->prepare("INSERT INTO pilet (kasutajaId,nimi,ostupaev,kehtivKuni,typp) VALUES (?,?,?,?,?)");
             $insert_kask->bind_param("issss", $_SESSION['kasutajaId'],$_SESSION['kasutajaNimi'],$praeguneAeg,$polAastatHiljem,$typp);
             if ($insert_kask->execute()) {
-                header("location: ../sisenes.php");
+                header("location: ../ostamine/omaPiletid.php");
             }
             $insert_kask->close();
             $_SESSION['tavPiletiOstukorvis']=0;
@@ -45,7 +45,7 @@ function ostamine()
             $insert_kask = $yhendus->prepare("INSERT INTO pilet (kasutajaId,nimi,ostupaev,kehtivKuni,typp) VALUES (?,?,?,?,?)");
             $insert_kask->bind_param("issss", $_SESSION['kasutajaId'],$_SESSION['kasutajaNimi'],$praeguneAeg,$aastaHiljem,$typp);
             if ($insert_kask->execute()) {
-                header("location: ../sisenes.php");
+                header("location: ../ostamine/omaPiletid.php");
             }
             $insert_kask->close();
             $_SESSION['lapsePiletiOstukorvis']=0;
@@ -110,7 +110,7 @@ function naitaMakseviisid($typp)
                     <td><img src='../pildid/kart.png' alt='kartLogo' width='35' height='25'></td>
                     <td>**** **** **** $tekst</td>
                     <td>
-                        <a href='ostamine.php?kustutaMakseViis=$id'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a>                </td>
+                        <a href='ostamine.php?kustutaMakseViis=$id'><span style=\"color: red;\">Kustuta</span></a>                </td>
                   </tr>";
         }
     }
@@ -146,21 +146,21 @@ function naitaOstukorvist()
         echo "<tr><td><img src='../pildid/pilet.png' alt='piletLogo' width='35' height='35'></td>
                               <td>$arv</td>
                               <td>Soodus pilet</td>
-                                <td><a href='ostamine.php?kustSoodusPilet'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a></td></tr>";
+                                <td><a href='ostamine.php?kustSoodusPilet'><span style=\"color: red;\">Kustuta</span></a></td></tr>";
     }
     if ($_SESSION['lapsePiletiOstukorvis']>0){
         $arv=$_SESSION['lapsePiletiOstukorvis'];
         echo "<tr><td><img src='../pildid/pilet.png' alt='piletLogo' width='35' height='35'></td>
                                 <td>$arv</td>
                                 <td>Lapse pilet</td>
-                                <td><a href='ostamine.php?kustLapsePilet'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a></td></tr>";
+                                <td><a href='ostamine.php?kustLapsePilet'><span style=\"color: red;\">Kustuta</span></a></td></tr>";
     }
     if ($_SESSION['tavPiletiOstukorvis']>0){
         $arv=$_SESSION['tavPiletiOstukorvis'];
         echo "<tr><td><img src='../pildid/pilet.png' alt='piletLogo' width='35' height='35'></td>
                                 <td>$arv</td>
                                 <td>Tavaline pilet</td>
-                                <td><a href='ostamine.php?kustTavPilet'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a></td></tr>";
+                                <td><a href='ostamine.php?kustTavPilet'><span style=\"color: red;\">Kustuta</span></a></td></tr>";
     }
 }
 

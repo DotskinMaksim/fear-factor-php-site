@@ -25,12 +25,18 @@ if (isset($_GET['code'])) {
 <body onload="onLoad()">
 <header>
     <div class="konteiner">
-        <h1><a href="index.php" class="koduleht-a">Hirmude maja</a></h1>
+        <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
+            <h1 class="tervitamine">Tere tulemast hirmude majja, <?php echo $_SESSION['kasutajaNimi'];?>!</h1>
+        <?php else : ?>
+            <h1 class="tervitamine">Tere tulemast hirmude majja!</h1>
+        <?php endif; ?>
 
 
         <nav>
             <ul>
-                    <li><a href="sisenes/sisenes.php">Sisenes</a></li>
+                <li><a href="index.php">Info</a></li>
+
+                <li><a href="sisenes/sisenes.php">Sisenes</a></li>
 
                 <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
             <?php if (!onAdmin()) : ?>
@@ -47,58 +53,61 @@ if (isset($_GET['code'])) {
 
             <?php endif; ?>
             </ul>
-
-
         </nav>
     </div>
 </header>
-
 <main class="koduleht-main">
-    <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
-    <h1 class="tervitamine">Tere tulemast hirmude majja, <?php echo $_SESSION['kasutajaNimi'];?>!</h1>
-    <?php else : ?>
-    <h1 class="tervitamine">Tere tulemast hirmude majja!</h1>
-    <?php endif; ?>
-
-
-
-    <section class="kirjeldus">
-        <h2>Kirjeldus</h2>
-        <p>Tere tulemast õuduse maailma, kus ootavad teid kõige kohutavamad katsumused. Valmistuge oma piire ja hirme proovile panema</p>
-        <div>
-        <?php if (!isset($_REQUEST['info'])) : ?>
-
-        <a href="index.php?info">Rohkem info</a>
-        <?php else : ?>
-            <a href="index.php">Sulge</a>
-
-        <?php endif; ?>
+    <section class="intro">
+        <div class="konteiner">
+            <h2>Hirmud muutuvad reaalsuseks</h2>
+            <p>Valmistuge uskumatuks sukeldumiseks õudusmaailma, kus miski pole see, mis näib.</p>
         </div>
+    </section>
+    <section class="kirjeldus">
+        <div class="konteiner">
+            <h2>Kirjeldus</h2>
+            <p>Tere tulemast õuduse maailma, kus ootavad teid kõige kohutavamad katsumused. Valmistuge oma piire ja hirme proovile panema.</p>
+            <div>
+            <?php if (!isset($_REQUEST['info'])) : ?>
 
+            <a href="index.php?info">Rohkem info</a>
+            <?php else : ?>
+                <a href="index.php">Sulge</a>
+
+            <?php endif; ?>
+            </div>
+        </div>
     </section>
     <?php if (isset($_REQUEST['info'])) : ?>
 
         <section class="rohkem-info">
-            <h2>Hirmude Maja</h2>
-            <p>Hirmude Maja pole lihtsalt lõbustuskoht, see on unikaalne maailm, kus kohtuvad teie sügavaimad hirmud ja fantaasiad. Siin igat tuba, igat detaili on loodud selleks, et sukelduda külastajaid uskumatu pinge ja hirmu õhkkonda.</p>
-            <p>Hirmude Maja lugu algas palju aastaid tagasi, kui grupp kirevaid õudusearmastajaid otsustas ühendada oma jõud, et luua midagi tõeliselt ainulaadset. Meie asutajad - inimesed, kes alati unistasid sellest, et jagada oma kiret ühaste armastustega maailmaga. Nad tõid oma ande, loovuse ja aastatepikkuse kogemuse meelelahutustööstusesse, et muuta see unistus tegelikkuseks.</p>
-            <p>Sellest ajast peale on Hirmude Maja saanud ekstreemsete meelelahutuste sümboliks ja kohaks, kuhu inimesed tulevad, et kogeda tõelist adrenaliini ja sukelduda tõelise hirmu õhkkonda. Meie hirmutubade ja näitlejate loodud ainulaadsed stsenaariumid panevad külastajaid tundma end osana elavast kohutavast filmist.</p>
-            <p>Hirmude Maja pole lihtsalt koht, kus saate kohkuda. See on koht, kus saate kogeda uusi emotsioone, ületada oma hirme ja luua mälestusi, mis jäävad teiega igavesti. Tere tulemast maailma, kus reaalsus sulab kokku fantaasiaga ja hirm saab teieks liitlaseks unustamatus seikluses.</p>
+            <div class="konteiner">
+                <h2>Hirmude Maja</h2>
+                <p>Hirmude Maja pole lihtsalt lõbustuskoht, see on unikaalne maailm, kus kohtuvad teie sügavaimad hirmud ja fantaasiad. Siin igat tuba, igat detaili on loodud selleks, et sukelduda külastajaid uskumatu pinge ja hirmu õhkkonda.</p>
+                <p>Hirmude Maja lugu algas palju aastaid tagasi, kui grupp kirevaid õudusearmastajaid otsustas ühendada oma jõud, et luua midagi tõeliselt ainulaadset. Meie asutajad - inimesed, kes alati unistasid sellest, et jagada oma kiret ühaste armastustega maailmaga. Nad tõid oma ande, loovuse ja aastatepikkuse kogemuse meelelahutustööstusesse, et muuta see unistus tegelikkuseks.</p>
+                <p>Sellest ajast peale on Hirmude Maja saanud ekstreemsete meelelahutuste sümboliks ja kohaks, kuhu inimesed tulevad, et kogeda tõelist adrenaliini ja sukelduda tõelise hirmu õhkkonda. Meie hirmutubade ja näitlejate loodud ainulaadsed stsenaariumid panevad külastajaid tundma end osana elavast kohutavast filmist.</p>
+                <p>Hirmude Maja pole lihtsalt koht, kus saate kohkuda. See on koht, kus saate kogeda uusi emotsioone, ületada oma hirme ja luua mälestusi, mis jäävad teiega igavesti. Tere tulemast maailma, kus reaalsus sulab kokku fantaasiaga ja hirm saab teieks liitlaseks unustamatus seikluses.</p>
+            </div>
         </section>
-
-
     <?php endif; ?>
 
-
-    <br>
     <section class="meist">
-        <h2>Meist</h2>
-        <p>Oleme professionaalsetest õudusfilmitegijatest koosnev meeskond, kes loob teie nautimiseks kõige põnevamaid hirmutubasid</p>
-        <!-- Здесь можно добавить фотографии или видео с комнатами страха -->
-        <div class="galerii">
-            <img src="pildid/info1.jpeg" alt="Kirjeldus 1">
-            <img src="pildid/info2.jpeg" alt="Kirjeldus 2">
-            <img src="pildid/info3.jpeg" alt="Kirjeldus 3">
+        <div class="konteiner">
+            <h2>Meist</h2>
+            <p>Oleme professionaalsetest õudusfilmitegijatest koosnev meeskond, kes loob teie nautimiseks kõige põnevamaid hirmutubasid.</p>
+            <!-- Здесь можно добавить фотографии или видео с комнатами страха -->
+            <div class="galerii">
+                <img src="pildid/info1.jpeg" alt="Kirjeldus 1">
+                <img src="pildid/info2.jpeg" alt="Kirjeldus 2">
+                <img src="pildid/info3.jpeg" alt="Kirjeldus 3">
+            </div>
+        </div>
+    </section>
+    <section class="kontakt">
+        <div class="konteiner">
+            <h2>Võta meiega ühendust</h2>
+            <p>Tel: 1234-5678</p>
+            <p>Meil: info@hirmude-maja.ee</p>
         </div>
     </section>
 
@@ -106,6 +115,7 @@ if (isset($_GET['code'])) {
 </main>
 
     <?php include 'elemendid/footer.php'; ?>
+
 </body>
 </html>
 

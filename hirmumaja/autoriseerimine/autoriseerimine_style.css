@@ -1,0 +1,113 @@
+/* Стили для основного контейнера */
+.logiSisse {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+/* Стили для заголовка формы */
+.logiSisse h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Стили для полей ввода */
+.logiSisse input[type="text"],
+.logiSisse input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Стили для кнопок */
+.logiSisse input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logiSisse input[type="submit"]:hover {
+    background-color: #ff6a00;
+}
+
+/* Стили для ссылки "Регистрация" */
+.logiSisse span {
+    display: block;
+    text-align: center;
+}
+
+/*.logiSisse span a {*/
+/*    color: blue;*/
+/*    text-decoration: none;*/
+/*}*/
+
+
+
+
+.registr {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.registr h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registr input[type="text"],
+.registr input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registr input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registr input[type="submit"]:hover {
+    background-color: #ff6a00;
+}
+
+.registr span {
+    display: block;
+    text-align: center;
+}
+
+
+
+#vastusNimi,
+#vastusParool {
+    color: red;
+}
+input[type="submit"]:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+input[type="submit"]:disabled:hover {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}

@@ -81,36 +81,46 @@ if (isset($_REQUEST['saada'])){
     <link rel="stylesheet" href="../style.css">
     <script src="ostamine_script.js" ></script>
 </head>
+<?php if (isset($_REQUEST["makseviisid"]) ): ?>
 <body onload="onLoadMaks()" >
+<?php elseif (isset($_REQUEST["ostukorv"]) ): ?>
+<body onload="onLoadOst()" >
+<?php else : ?>
+<body>
+<?php endif; ?>
 
 <header>
-    <h1><a href="../index.php" class="koduleht-a">Hirmude maja</a></h1>
+    <div class="konteiner">
+        <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
+            <h1 class="tervitamine">Tere tulemast hirmude majja, <?php echo $_SESSION['kasutajaNimi'];?>!</h1>
+        <?php else : ?>
+            <h1 class="tervitamine">Tere tulemast hirmude majja!</h1>
+        <?php endif; ?>
 
-    <nav>
-        <ul>
 
-        <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
+        <nav>
+            <ul>
+                <li><a href="../index.php">Info</a></li>
+                <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
+                <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
+                <li><a href="omaPiletid.php">Minu piletid</a></li>
+                <li><a href="../autoriseerimine/logiValja.php">Logi välja</a></li>
 
-        <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
-        <li><a href="omaPiletid.php">Minu piletid</a></li>
-        <li><a href="../autoriseerimine/logiValja.php">Logi välja</a></li>
-
-        </ul>
-    </nav>
-    <nav>
-        <ul>
-        <li><a href="ostamine.php">Vaatamine</a></li>
-        <li><a href="ostamine.php?ostukorv">Ostukorv</a></li>
-        <li><a href="ostamine.php?makseviisid">Makseviisid</a></li>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+            <li><a href="ostamine.php">Vaatamine</a></li>
+            <li><a href="ostamine.php?ostukorv">Ostukorv</a></li>
+            <li><a href="ostamine.php?makseviisid">Makseviisid</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 <main>
-
-
 <?php if (isset($_REQUEST["makseviisid"]) ): ?>
-
 <section class="makseViisid">
+    <div class="konteiner">
     <table>
         <thead>
             <tr>
@@ -123,8 +133,7 @@ if (isset($_REQUEST['saada'])){
     </table>
 
 
-
-
+    <br>
     <form action="" method="post">
         <label for="card_number">Kardi number:</label>
         <input type="text" id="kardiNumber" name="kardiNumber" placeholder="1234 5678 9101 1121" required oninput="saadamineKontroll()">
@@ -144,16 +153,16 @@ if (isset($_REQUEST['saada'])){
         </div>
 
 
-
+        <br>
+        <br>
         <input type="submit" value="Saada" name="saada" id="saada">
     </form>
+    </div>
 </section>
-
 <?php elseif (isset($_REQUEST["ostukorv"]) ): ?>
-<body onload="onLoadOst()" >
-
 
 <section class="ostukorv">
+    <div class="konteiner">
 
         <table>
             <thead>
@@ -167,30 +176,36 @@ if (isset($_REQUEST['saada'])){
 
             </tbody>
         </table>
+
         <form action="">
 
         <h3>Kokku: <?php arvutaKokku(); ?></h3>
         <input type="hidden" value="<?php echo arvutaKokku(); ?>" id="kokku">
 
-        Makseviis:
+            <br>
+            <div class="makse">
+        <h3>Makseviis</h3>
         <select id="selectMakseviisid" name="selectMakseviisid" onchange="ostamineKontroll()">
             <?php naitaMakseViisid('option'); ?>
         </select>
         <br>
+        <br>
         <input type="checkbox" name="checkbox" id="checkbox" oninput="ostamineKontroll()">
         Olen <a href="leping.php">lepingu</a> läbi lugenud ja nõustun sellega
+            </div>
+        <br>
         <br>
         <input type="submit" value="Osta"  name="osta" id="osta">
         <input type="submit" value="Tagasi"  name="tagasi">
         </form>
-    </section>
+    </div>
+</section>
 
 
 
 <?php else : ?>
-<body>
-
     <section class="Piletid">
+        <div class="konteiner">
         <div id="vastus"></div>
 
         <script>
@@ -198,7 +213,7 @@ if (isset($_REQUEST['saada'])){
             document.getElementById('vastus').innerHTML = "<span style=\"color: green; text-align: center;\">On lisatud ostukorvi</span>";
             setTimeout(function() {
                 document.getElementById('vastus').innerHTML = '';
-            }, 2000);
+            }, 3000);
             <?php endif; ?>
         </script>
 
@@ -268,6 +283,7 @@ if (isset($_REQUEST['saada'])){
 
             </div>
         </form>
+        </div>
     </section>
 
 

@@ -1,75 +1,204 @@
 
+/*body {*/
+/*    background-color: #1a1a1a;*/
+/*    color: #fff;*/
+/*    font-family: 'Merriweather', serif; !* Изменен шрифт *!*/
+
+/*}*/
+/*body a{*/
+/*    color: darkred;*/
+/*}*/
+
+/*.koduleht-a {*/
+/*    text-decoration: none;*/
+/*    font-size: 50px;*/
+/*    color: indigo;*/
+
+
+/*}*/
+/*.koduleht-main{*/
+/*    font-size: 20px;*/
+/*    padding-left: 20px;*/
+/*    padding-right: 20px;*/
+
+/*}*/
+
+
+/*header{*/
+/*    background-image: url('pildid/bg2.jpeg');*/
+
+/*}*/
+/*header h1{*/
+/*    padding-left: 60px;*/
+
+/*}*/
+/*header h1, header nav {*/
+/*    display: inline-block; !* Размещаем элементы на одной линии *!*/
+/*}*/
+/*.tervitamine, .kirjeldus div{*/
+/*    text-align: center;*/
+/*}*/
+
+/*.tervitamine{*/
+/*    font-family: 'Creepster', cursive; !* Применяем шрифт Creepster *!*/
+/*}*/
+
+/*nav {*/
+/*    margin-top: 30px;*/
+/*    float: right;*/
+
+/*}*/
+
+/*!* Добавленные стили для навигационного меню *!*/
+/*header nav ul {*/
+/*    list-style-type: none; !* Убираем маркеры у списка *!*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*header nav ul li {*/
+/*    display: inline-block; !* Размещаем пункты меню горизонтально *!*/
+
+/*}*/
+
+/*header nav ul li a {*/
+/*    display: block; !* Превращаем ссылки в блочные элементы *!*/
+/*    padding: 10px 20px; !* Задаем отступы для пунктов меню *!*/
+/*    text-decoration: none;*/
+/*    color: black; !* Цвет текста ссылок *!*/
+/*    width: 150px; !* Задаем ширину *!*/
+/*    font-size: 20px; !* Устанавливаем размер шрифта *!*/
+/*}*/
+
+/*header nav ul li a:hover {*/
+/*    background-color: #f0f0f0; !* Цвет фона при наведении на ссылку *!*/
+/*}*/
 body {
-    background-color: #1a1a1a;
+    background: linear-gradient(to right, #000000, #333333); /* Градиент от черного к темно-серому */
+    background-size: cover;
+    background-position: center;
     color: #fff;
-    font-family: 'Merriweather', serif; /* Изменен шрифт */
-
-}
-body a{
-    color: darkred;
-}
-
-.koduleht-a {
-    text-decoration: none;
-    font-size: 50px;
-    color: indigo;
-
-
-}
-.koduleht-main{
-    font-size: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-}
-
-
-header{
-    background-image: url('pildid/bg2.jpeg');
-
-}
-header h1{
-    padding-left: 60px;
-
-}
-header h1, header nav {
-    display: inline-block; /* Размещаем элементы на одной линии */
-}
-.tervitamine, .kirjeldus div{
-    text-align: center;
-}
-
-.tervitamine{
-    font-family: 'Creepster', cursive; /* Применяем шрифт Creepster */
-}
-
-nav {
-    margin-top: 30px;
-    float: right;
-
-}
-
-/* Добавленные стили для навигационного меню */
-header nav ul {
-    list-style-type: none; /* Убираем маркеры у списка */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header nav ul li {
-    display: inline-block; /* Размещаем пункты меню горизонтально */
-
+.konteiner {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header nav ul li a {
-    display: block; /* Превращаем ссылки в блочные элементы */
-    padding: 10px 20px; /* Задаем отступы для пунктов меню */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 48px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: black; /* Цвет текста ссылок */
-    width: 150px; /* Задаем ширину */
-    font-size: 20px; /* Устанавливаем размер шрифта */
+    font-size: 18px;
 }
 
-header nav ul li a:hover {
-    background-color: #f0f0f0; /* Цвет фона при наведении на ссылку */
+main {
+    padding: 50px 0;
+}
+
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color: #ff4500; /* Оранжевый цвет кнопки */
+    color: #fff; /* Белый текст на кнопке */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border: none; /* Убираем границу кнопки */
+    border-radius: 5px; /* Закругляем углы кнопки */
+    cursor: pointer; /* Показываем, что кнопка кликабельна */
+    font-size: 16px; /* Размер текста на кнопке */
+}
+
+input[type="submit"]:hover {
+    background-color: #ff6a00; /* Изменяем цвет кнопки при наведении */
+}
+
+input[type="number"],input[type="text"], input[type="password"]{
+    width: 200px; /* Ширина поля ввода */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Граница поля ввода */
+    border-radius: 5px; /* Скругление углов */
+    font-size: 16px; /* Размер шрифта */
+    outline: none; /* Убираем контур фокуса */
+}
+
+input[type="number"],input[type="text"], input[type="password"]:hover,
+input[type="number"],input[type="text"], input[type="password"]:focus {
+    border-color: #ff4500; /* Цвет границы при наведении и фокусе */
+}
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #555; /* Горизонтальная линия между строками */
+}
+
+th {
+    background-color: #555; /* Цвет фона заголовка */
+}
+a {
+    text-decoration: none;
+    color: blueviolet;
+}
+a:hover{
+    text-decoration: underline;
+
+}
+input[type="submit"]:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+input[type="submit"]:disabled:hover {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
 }

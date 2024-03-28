@@ -20,6 +20,7 @@ if (isset($_REQUEST['tagasi'])) {
 <body>
 <main>
     <section class="leping">
+        <div class="konteiner">
         <h1>Litsentsileping</h1>
         <p>
             <strong>1. Pileti ostmine</strong><br>
@@ -45,8 +46,9 @@ if (isset($_REQUEST['tagasi'])) {
             5.1. Kõik selles lepingus sätestatud õigused ja kohustused kehtivad kõigile klientidele, kes ostavad pileteid "Hirmude maja" külastamiseks.<br>
             5.2. Iga klient kinnitab, et ta on tutvunud ja mõistnud selle lepingu tingimusi enne pileti ostmist "Hirmude maja" külastamiseks.
         </p>
+        </div>
     </section>
-    <div>
+    <div class="konteiner">
         <form action="">
             <input type="submit" name="tagasi" value="Tagasi">
         </form>

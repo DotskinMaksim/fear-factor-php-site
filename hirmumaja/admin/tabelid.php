@@ -41,14 +41,21 @@ if (isset($_GET["kustutaHirmumaja"])) {
 <body>
 
 <header>
-    <h1><a href="../index.php" class="koduleht-a">Hirmude maja</a></h1>
+    <div class="konteiner">
+    <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
+        <h1 class="tervitamine">Tere tulemast hirmude majja, <?php echo $_SESSION['kasutajaNimi'];?>!</h1>
+    <?php else : ?>
+        <h1 class="tervitamine">Tere tulemast hirmude majja!</h1>
+    <?php endif; ?>
     <nav>
         <ul>
+        <li><a href="../index.php">Info</a></li>
+
         <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
 
         <li><a href="../admin/tabelid.php">Admini paneel</a></li>
 
-        <li><a href="../autoriseerimine/logiValja.php">Log out</a></li>
+        <li><a href="../autoriseerimine/logiValja.php">Logi välja</a></li>
         </ul>
 
     </nav>
@@ -59,15 +66,17 @@ if (isset($_GET["kustutaHirmumaja"])) {
         <li><a href="tabelid.php?hirmumaja">Hirmumaja</a></li>
         </ul>
     </nav>
+    </div>
 </header>
 <main>
     <section class="tabelid">
+        <div class="konteiner">
 
 
 
     <?php if (isset($_REQUEST["piletid"]) ): ?>
         <div>
-            <h3>Tabel piletid</h3>
+            <h2>Tabel piletid</h2>
 
             <table>
                 <thead>
@@ -89,7 +98,7 @@ if (isset($_GET["kustutaHirmumaja"])) {
 
     <?php elseif (isset($_REQUEST["hirmumaja"]) ): ?>
         <div>
-            <h3>Tabel hirmumaja</h3>
+            <h2>Tabel hirmumaja</h2>
 
             <table>
                 <thead>
@@ -109,7 +118,7 @@ if (isset($_GET["kustutaHirmumaja"])) {
 
     <?php else: ?>
         <div>
-            <h3>Tabel kasutajad</h3>
+            <h2>Tabel kasutajad</h2>
 
             <table>
                 <thead>
@@ -127,6 +136,7 @@ if (isset($_GET["kustutaHirmumaja"])) {
             </table>
         </div>
     <?php endif; ?>
+        </div>
     </section>
 </main>
     <?php include '../elemendid/footer.php'; ?>

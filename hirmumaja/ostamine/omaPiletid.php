@@ -20,25 +20,31 @@ require_once ('ostamine_funktsioonid.php');
 </head>
 <body>
 <header>
-    <h1><a href="../index.php" class="koduleht-a">Hirmude maja</a></h1>
+    <div class="konteiner">
+        <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
+            <h1 class="tervitamine">Tere tulemast hirmude majja, <?php echo $_SESSION['kasutajaNimi'];?>!</h1>
+        <?php else : ?>
+            <h1 class="tervitamine">Tere tulemast hirmude majja!</h1>
+        <?php endif; ?>
 
-    <nav>
-        <ul>
-            <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
-            <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
-            <li><a href="omaPiletid.php">Minu piletid</a></li>
-            <li><a href="../autoriseerimine/logiValja.php">Logi välja</a></li>
 
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="../index.php">Info</a></li>
+                <li><a href="../sisenes/sisenes.php">Sisenes</a></li>
+                <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
+                <li><a href="omaPiletid.php">Minu piletid</a></li>
+                <li><a href="../autoriseerimine/logiValja.php">Logi välja</a></li>
+
+            </ul>
+        </nav>
+    </div>
 </header>
-
 <main>
-
-
     <section class="Piletid">
-        <?php  naitaOmaPiletid();  ?>
-
+        <div class="konteiner">
+            <?php  naitaOmaPiletid();  ?>
+        </div>
     </section>
 </main>
 <?php include '../elemendid/footer.php'; ?>

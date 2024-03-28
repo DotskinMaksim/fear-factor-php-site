@@ -36,13 +36,17 @@ if (isset($_REQUEST['tagasi'])){
 <body onload="onLoadSisse()">
 <main>
     <section class="logiSisse">
+
         <h1>Logi sisse</h1>
         <form action="?" method="post">
             Nimi: <input type="text" name="nimi" id="nimi" oninput="logiSisseKontroll()" placeholder="Sisestage..."><br>
             Parool: <input type="password" name="parool" id="parool" oninput="logiSisseKontroll()" placeholder="Sisestage..."><br>
             <div id="vastus"></div>
 
+            <br>
             <input type="submit" value="Logi sisse"  name="logiSisse" id="logiSisse">
+            <br>
+            <br>
             <input type="submit" value="Tagasi"  name="tagasi">
 
             <br>
@@ -59,7 +63,8 @@ if (isset($_REQUEST['tagasi'])){
                 ?>
             </script>
         </form>
-    </>
+
+    </section>
 </main>
     <?php include '../elemendid/footer.php'; ?>
 </body>

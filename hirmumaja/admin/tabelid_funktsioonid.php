@@ -38,7 +38,7 @@ function kasutajad()
                     </form>
                 </td>
                 <td>
-                    <a href='tabelid.php?kustutaKasutaja=$id'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a>
+                    <a href='tabelid.php?kustutaKasutaja=$id'><span style=\"color: red;\">Kustuta</span></a>
                 </td>
               </tr>";
     }
@@ -93,7 +93,7 @@ function piletid()
                 <td>$kehtivKuni</td>
                 <td>$typp</td>
                 <td>
-                    <a href='tabelid.php?kustutaPilet=$id'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a>
+                    <a href='tabelid.php?kustutaPilet=$id'><span style=\"color: red;\">Kustuta</span></a>
                 </td>
               </tr>";
     }
@@ -128,7 +128,7 @@ function hirmumaja()
                 <td>$sisenes</td>
                 <td>$lahkus</td>
                 <td>
-                    <a href='tabelid.php?kustutaHirmumaja=$id'><img src='../pildid/kustuta.png' alt='kustutaLogo' width='35' height='35'></a>
+                    <a href='tabelid.php?kustutaHirmumaja=$id'><span style=\"color: red;\">Kustuta</span></a>
                 </td>
               </tr>";
     }

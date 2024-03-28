@@ -35,6 +35,7 @@ if (isset($_REQUEST['tagasi'])){
 <body onload="onLoadReg()">
 <main>
 <section class="registr">
+
     <h1>Registreerimine</h1>
     <form action="?" method="post">
         Nimi: <input type="text" name="nimi" id="nimiReg" oninput="registreeriKontroll()" placeholder="Sisestage..."><br>
@@ -43,13 +44,16 @@ if (isset($_REQUEST['tagasi'])){
         Parool: <input type="password" name="parool1" id="parool1" oninput="registreeriKontroll()" placeholder="Sisestage..."><br>
         Kinnitage parool: <input type="password" name="parool2" id="parool2" oninput="registreeriKontroll()" placeholder="Sisestage..."><br>
         <div id="vastusParool"></div>
+        <br>
 
         <input type="submit" value="Registreeri" name="register" id="register">
+        <br>
+        <br>
         <input type="submit" value="Tagasi"  name="tagasi">
 
         <br>
         <br>
-        <span>Olete juba sisse logitud?<a href="logiSisse.php">Logi sisse</a></span>
+        <span>Olete juba sisse logitud? <a href="logiSisse.php">Logi sisse</a></span>
 
         <script>
             <?php
@@ -66,6 +70,7 @@ if (isset($_REQUEST['tagasi'])){
             <?php } ?>
         </script>
     </form>
+
 </section>
 </main>
 <?php include '../elemendid/footer.php'; ?>

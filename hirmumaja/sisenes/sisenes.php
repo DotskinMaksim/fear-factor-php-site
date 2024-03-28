@@ -41,43 +41,51 @@ if (isset($_REQUEST["lahkus"])) {
 </head>
 <body onload="onLoad()">
 <header>
-    <h1><a href="../index.php" class="koduleht-a">Hirmude maja</a></h1>
+    <div class="konteiner">
+        <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
+            <h1 class="tervitamine">Tere tulemast hirmude majja, <?php echo $_SESSION['kasutajaNimi'];?>!</h1>
+        <?php else : ?>
+            <h1 class="tervitamine">Tere tulemast hirmude majja!</h1>
+        <?php endif; ?>
 
-    <nav>
-        <ul>
-            <li><a href="sisenes.php">Sisenes</a></li>
+        <nav>
+            <ul>
+                <li><a href="../index.php">Info</a></li>
+
+                <li><a href="sisenes.php">Sisenes</a></li>
 
 
-            <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
-                <?php if (!onAdmin()) : ?>
+                <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
+                    <?php if (!onAdmin()) : ?>
 
 
-                    <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
-                    <li><a href="../ostamine/omaPiletid.php">Minu piletid</a></li>
+                        <li><a href="../ostamine/ostamine.php">Osta pilet</a></li>
+                        <li><a href="../ostamine/omaPiletid.php">Minu piletid</a></li>
+                    <?php else : ?>
+                        <li><a href="../admin/tabelid.php">Admini paneel</a></li>
+                    <?php endif; ?>
+                    <li><a href="../autoriseerimine/logiValja.php">Logi välja</a></li>
                 <?php else : ?>
-                    <li><a href="../admin/tabelid.php">Admini paneel</a></li>
+                    <li><a href="../autoriseerimine/logiSisse.php">Logi sisse</a></li>
+                    <li><a href="../autoriseerimine/registreerimine.php">Registreeri</a></li>
+
+
                 <?php endif; ?>
-                <li><a href="../autoriseerimine/logiValja.php">Logi välja</a></li>
-            <?php else : ?>
-                <li><a href="../autoriseerimine/logiSisse.php">Logi sisse</a></li>
-                <li><a href="../autoriseerimine/registreerimine.php">Registreeri</a></li>
-
-
-            <?php endif; ?>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <main>
 <section class="sisenes">
-<div>
+<div class="konteiner">
     <?php if (onAdmin()) : ?>
         <form action="" method="post">
-            <h3>Sisenes</h3>
+            <h2>Sisenes paneel</h2>
             <input type="number" name="piletId" placeholder="Pilet id" id="piletId" oninput="sisenesKontroll()">
             <input type="number" name="kasutajaId" placeholder="Kasutaja id" id="kasutajaId" oninput="sisenesKontroll()">
             <div id="vastus"></div>
-
+            <br>
             <input type="submit" name="sisenes" value="Ok" id="sisenes">
 
             <script>

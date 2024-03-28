@@ -1,8 +1,5 @@
 
 .Piletid {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
     margin: 0;
     padding: 0;
 }
@@ -10,17 +7,16 @@
 .PiletDiv {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #fff;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background: #333333;
 }
 
 .PiletHeader {
     text-align: center;
     margin-bottom: 20px;
     font-size: 32px;
-    color: #333;
 }
 
 .PiletKirjeldus {
@@ -54,6 +50,76 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
     font-size: 24px;
+}
+
+
+
+.ostukorv h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.ostukorv select {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* Стили для внешнего вида чекбокса */
+
+.ostukorv input[type="submit"] {
+    background-color: #ff4500; /* Оранжевый цвет кнопки */
+    color: #fff; /* Белый текст на кнопке */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border: none; /* Убираем границу кнопки */
+    border-radius: 5px; /* Закругляем углы кнопки */
+    cursor: pointer; /* Показываем, что кнопка кликабельна */
+    font-size: 16px; /* Размер текста на кнопке */
+    font-family: 'Merriweather', serif; /* Используем шрифт Merriweather */
+    margin-right: 10px;
+}
+
+.ostukorv input[type="submit"]:hover {
+    background-color: #ff6a00; /* Изменяем цвет кнопки при наведении */
+}
+.makse{
+    font-size: 20px;
+}
+#vastus{
+    text-align: center;
+    font-size: 25px;
+}
+
+
+
+.makseViisid label {
+    display: block; /* Размещаем метки на новой строке */
+    margin-bottom: 5px; /* Отступ снизу для меток */
+}
+
+.makseViisid input[type="text"],
+.makseViisid input[type="submit"] {
+    width: calc(50% - 5px); /* Ширина полей ввода и кнопки */
+    padding: 10px; /* Внутренний отступ */
+    margin-bottom: 10px; /* Отступ снизу */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 5px; /* Закругление углов */
+}
+
+.makseViisid input[type="submit"] {
+    width: 100%; /* Ширина кнопки на 100% */
+
+}
+
+
+#kardiNimi,#kardiNumber{
+    width: 97.5%;
+}
+#kehtivus{
+    width: 90%;
+}
+#cvv{
+    width: 95%;
 }
