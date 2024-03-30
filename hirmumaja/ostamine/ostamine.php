@@ -1,9 +1,19 @@
+<!--see leht on mõeldud pileti ostmiseks, makseviisi lisamiseks kaardi näol, -->
+<!--ostukorvi vaatamiseks ja piletite eest tasumiseks-->
 <?php
 session_start();
 require_once ('../konf.php');
 require_once ('../funktsioonid.php');
 require_once ('ostamine_funktsioonid.php');
 
+//ühendage vajalikud failid
+
+
+//et saaksite brauseris koodi lugeda
+if (isset($_GET['code'])) {
+    die(highlight_file(__FILE__, 1));
+}
+//kui otsustakse makseviisi kustutada, helistame funktsioonile
 if (isset($_GET["kustutaMakseViis"])) {
     $makseId = $_GET["kustutaMakseViis"];
     kustutaMakseviis($makseId);
@@ -12,30 +22,28 @@ if (isset($_GET["kustutaMakseViis"])) {
 }
 
 
-if (isset($_GET['code'])) {
-    die(highlight_file(__FILE__, 1));
-}
-
-
-if (isset($_REQUEST['tagasi'])){
-    header("location: ../sisenes.php");
-    exit();
-}
+//kui otsustakse osta piletid, helistame funktsioonile
 
 if (isset($_REQUEST['osta'])){
     ostamine();
     exit();
 }
+
+//kui otsustakse lisada soodus pilet ostukorvasse, helistame funktsioonile
 if (isset($_REQUEST['lisaSoodusPilet'])){
     $_SESSION['soodusPiletiOstukorvis'] ++;
     header("location: ostamine.php?onLisatud");
     exit();
 }
+
+//kui otsustakse lisada lapse pilet ostukorvasse, helistame funktsioonile
 if (isset($_REQUEST['lisaLapsePilet'])){
     $_SESSION['lapsePiletiOstukorvis'] ++;
     header("location: ostamine.php?onLisatud");
     exit();
 }
+
+//kui otsustakse lisada tavaline pilet ostukorvasse, helistame funktsioonile
 if (isset($_REQUEST['lisaTavPilet'])){
     $_SESSION['tavPiletiOstukorvis'] ++;
     header("location: ostamine.php?onLisatud");
@@ -43,23 +51,28 @@ if (isset($_REQUEST['lisaTavPilet'])){
 }
 
 
-
+//kui otsustakse kustada soodus pilet ostukorvist, helistame funktsioonile
 if (isset($_REQUEST['kustSoodusPilet'])){
     $_SESSION['soodusPiletiOstukorvis'] --;
     header("location: ostamine.php?ostukorv");
     exit();
 }
+
+//kui otsustakse kustada lapse pilet ostukorvist, helistame funktsioonile
 if (isset($_REQUEST['kustLapsePilet'])){
     $_SESSION['lapsePiletiOstukorvis'] --;
     header("location: ostamine.php?ostukorv");
     exit();
 }
+
+//kui otsustakse kustada tavaline pilet ostukorvist, helistame funktsioonile
 if (isset($_REQUEST['kustTavPilet'])){
     $_SESSION['tavPiletiOstukorvis'] --;
     header("location: ostamine.php?ostukorv");
     exit();
 }
 
+//kui otsustakse lisada uus makseviis, helistame funktsioonile
 if (isset($_REQUEST['saada'])){
     lisaMakseviis();
     header("location: ostamine.php?makseviisid");
@@ -77,10 +90,11 @@ if (isset($_REQUEST['saada'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ostamine</title>
     <link rel="stylesheet" href="ostamine_style.css">
-
     <link rel="stylesheet" href="../style.css">
     <script src="ostamine_script.js" ></script>
 </head>
+
+<!--nupu deaktiveerimise skripti funktsiooni laadimine sõltuvalt lehe jaotisest-->
 <?php if (isset($_REQUEST["makseviisid"]) ): ?>
 <body onload="onLoadMaks()" >
 <?php elseif (isset($_REQUEST["ostukorv"]) ): ?>
@@ -91,13 +105,14 @@ if (isset($_REQUEST['saada'])){
 
 <header>
     <div class="konteiner">
+        <!--        kui kasutaja on sisse logitud, kuvame tema nimega tervituse ja kui ei, siis lihtsalt tervitus-->
         <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
             <h1 class="tervitamine">Tere tulemast hirmude majja, <?php echo $_SESSION['kasutajaNimi'];?>!</h1>
         <?php else : ?>
             <h1 class="tervitamine">Tere tulemast hirmude majja!</h1>
         <?php endif; ?>
 
-
+        <!--        navigeerimismenüü-->
         <nav>
             <ul>
                 <li><a href="../index.php">Info</a></li>
@@ -108,6 +123,8 @@ if (isset($_REQUEST['saada'])){
 
             </ul>
         </nav>
+        <br>
+        <!--   teine   navigeerimismenüü-->
         <nav>
             <ul>
             <li><a href="ostamine.php">Vaatamine</a></li>
@@ -118,6 +135,8 @@ if (isset($_REQUEST['saada'])){
     </div>
 </header>
 <main>
+
+<!--    kui klõpsate makseviiside jaotist-->
 <?php if (isset($_REQUEST["makseviisid"]) ): ?>
 <section class="makseViisid">
     <div class="konteiner">
@@ -128,6 +147,7 @@ if (isset($_REQUEST['saada'])){
             </tr>
         </thead>
         <tbody>
+<!--     helistame php funktsioon mis naitab makseviid tabelis-->
             <?php  naitaMakseviisid('tabelis'); ?>
         </tbody>
     </table>
@@ -135,6 +155,7 @@ if (isset($_REQUEST['saada'])){
 
     <br>
     <form action="" method="post">
+<!--     vorm kaardiandmete teatud mustritega täitmiseks-->
         <label for="card_number">Kardi number:</label>
         <input type="text" id="kardiNumber" name="kardiNumber" placeholder="1234 5678 9101 1121" required oninput="saadamineKontroll()">
 
@@ -159,6 +180,8 @@ if (isset($_REQUEST['saada'])){
     </form>
     </div>
 </section>
+    <!-- kui klõpsate ostukorvi jaotist-->
+
 <?php elseif (isset($_REQUEST["ostukorv"]) ): ?>
 
 <section class="ostukorv">
@@ -167,10 +190,12 @@ if (isset($_REQUEST['saada'])){
         <table>
             <thead>
             <tr>
-                <th colspan="4">Ostukorv</th>
+                <th colspan="5">Ostukorv</th>
             </tr>
             </thead>
             <tbody>
+            <!--helistame php funktsioon mis naitab piletid ostukorvist tabelis-->
+
             <?php naitaOstukorvist();
             ?>
 
@@ -179,36 +204,43 @@ if (isset($_REQUEST['saada'])){
 
         <form action="">
 
-        <h3>Kokku: <?php arvutaKokku(); ?></h3>
-        <input type="hidden" value="<?php echo arvutaKokku(); ?>" id="kokku">
+            <!--helistame php funktsioon mis naitab arvub summa-->
+
+                <h3>Kokku: <?php arvutaKokku(); ?></h3>
+            <input type="hidden" value="<?php echo arvutaKokku(); ?>" id="kokku">
 
             <br>
             <div class="makse">
-        <h3>Makseviis</h3>
-        <select id="selectMakseviisid" name="selectMakseviisid" onchange="ostamineKontroll()">
-            <?php naitaMakseViisid('option'); ?>
-        </select>
-        <br>
-        <br>
-        <input type="checkbox" name="checkbox" id="checkbox" oninput="ostamineKontroll()">
-        Olen <a href="leping.php">lepingu</a> läbi lugenud ja nõustun sellega
+                <h3>Makseviis</h3>
+                <select id="selectMakseviisid" name="selectMakseviisid" onchange="ostamineKontroll()">
+                    <!-- helistame php funktsioon mis naitab makseviid option-select-is -->
+                    <?php naitaMakseViisid('option'); ?>
+                </select>
+                <br>
+                <br>
+<!--         ostja kinnitus, et ta on reeglitega tutvunud ja -->
+<!--          nõustub sellega, kuni ostunupp ei sütti enne, kui ta on kinnitanud-->
+                <input type="checkbox" name="checkbox" id="checkbox" oninput="ostamineKontroll()">
+                Olen <a href="leping.php">lepingu</a> läbi lugenud ja nõustun sellega
             </div>
-        <br>
-        <br>
-        <input type="submit" value="Osta"  name="osta" id="osta">
-        <input type="submit" value="Tagasi"  name="tagasi">
+            <br>
+            <br>
+            <input type="submit" value="Osta"  name="osta" id="osta">
         </form>
     </div>
 </section>
 
 
-
+    <!--    kui klõpsate pileti vaatamise jaotist-->
 <?php else : ?>
     <section class="Piletid">
         <div class="konteiner">
+
+<!-- koht kus tagastab vastus et pilet on lisatud ostukorvi-->
         <div id="vastus"></div>
 
         <script>
+            // kui pilet on lisatud ostukorvi naitame kirja seda eest mis kaob 3 sekundi parast
             <?php if (isset($_GET['onLisatud'])) : ?>
             document.getElementById('vastus').innerHTML = "<span style=\"color: green; text-align: center;\">On lisatud ostukorvi</span>";
             setTimeout(function() {
@@ -218,7 +250,7 @@ if (isset($_REQUEST['saada'])){
         </script>
 
 
-
+<!--   tavaline pilet-->
         <form action="">
             <div class="PiletDiv">
                 <div class="PiletHeader">
@@ -241,7 +273,7 @@ if (isset($_REQUEST['saada'])){
             </div>
 
 
-
+<!--   lapse pilet-->
             <div class="PiletDiv">
                 <div class="PiletHeader">
                     <h2>Lapse pilet</h2>
@@ -261,6 +293,9 @@ if (isset($_REQUEST['saada'])){
                     <input type="submit" name="lisaLapsePilet" value="+" class="PiletLisaNupp">
                 </div>
             </div>
+
+
+<!--     soodus pilet-->
 
             <div class="PiletDiv">
                 <div class="PiletHeader">
@@ -289,7 +324,7 @@ if (isset($_REQUEST['saada'])){
 
 <?php endif; ?>
 </main>
-
+<!-- footer-->
     <?php include '../elemendid/footer.php'; ?>
 
 </body>

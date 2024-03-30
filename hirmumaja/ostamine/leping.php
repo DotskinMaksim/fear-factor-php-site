@@ -1,5 +1,10 @@
 <?php
+//see leht on leping mis kasutaja peab lugema enne ostamist
+
+
+//kui valitud tagasi nupp
 if (isset($_REQUEST['tagasi'])) {
+    //tagastame kasutaja kodulehele
     header("location: ostamine.php?ostukorv");
     exit();
 }
@@ -19,6 +24,8 @@ if (isset($_REQUEST['tagasi'])) {
 </head>
 <body>
 <main>
+
+<!-- leping-->
     <section class="leping">
         <div class="konteiner">
         <h1>Litsentsileping</h1>
@@ -49,11 +56,13 @@ if (isset($_REQUEST['tagasi'])) {
         </div>
     </section>
     <div class="konteiner">
+<!--    tagasi nupp-->
         <form action="">
             <input type="submit" name="tagasi" value="Tagasi">
         </form>
     </div>
 </main>
+<!--footer-->
     <?php include '../elemendid/footer.php'; ?>
 
 </body>

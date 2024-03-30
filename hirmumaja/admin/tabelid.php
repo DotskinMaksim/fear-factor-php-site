@@ -1,23 +1,35 @@
 <?php
+//siin on paneel hirmuamaja, kasutaja ja pileti tabeliga
+//mis saab kasutada ainult admin
+
 session_start();
 require_once ('../funktsioonid.php');
 require_once ('tabelid_funktsioonid.php');
+//ühendage vajalikud failid
 
 
+
+//kui valitud kustuta kasutaja
 if (isset($_GET["kustutaKasutaja"])) {
+    //votame id ja helisatame funktsioon
     $kasutajaId = $_GET["kustutaKasutaja"];
     kustutaKasutaja($kasutajaId);
     exit();
 
 }
 
+//kui valitud kustuta pilet
 if (isset($_GET["kustutaPilet"])) {
+    //votame id ja helisatame funktsioon
     $piletId = $_GET["kustutaPilet"];
     kustutaPilet($piletId);
     exit();
 
 }
+
+//kui valitud kustuta hirmumaja kylastus
 if (isset($_GET["kustutaHirmumaja"])) {
+    //votame id ja helisatame funktsioon
     $hirmId = $_GET["kustutaHirmumaja"];
     kustutaHirmumaja($hirmId);
     exit();
@@ -42,12 +54,15 @@ if (isset($_GET["kustutaHirmumaja"])) {
 
 <header>
     <div class="konteiner">
-    <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
+        <!--  kui kasutaja on sisse logitud, kuvame tema nimega tervituse ja kui ei, siis lihtsalt tervitus-->
+        <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
         <h1 class="tervitamine">Tere tulemast hirmude majja, <?php echo $_SESSION['kasutajaNimi'];?>!</h1>
     <?php else : ?>
         <h1 class="tervitamine">Tere tulemast hirmude majja!</h1>
     <?php endif; ?>
-    <nav>
+
+        <!--navigeerimismenüü-->
+        <nav>
         <ul>
         <li><a href="../index.php">Info</a></li>
 
@@ -59,7 +74,9 @@ if (isset($_GET["kustutaHirmumaja"])) {
         </ul>
 
     </nav>
-    <nav>
+        <br>
+        <!--   teine  admini navigeerimismenüü-->
+        <nav>
         <ul>
         <li><a href="tabelid.php">Kasutajad</a></li>
         <li><a href="tabelid.php?piletid">Piletid</a></li>
@@ -71,10 +88,8 @@ if (isset($_GET["kustutaHirmumaja"])) {
 <main>
     <section class="tabelid">
         <div class="konteiner">
-
-
-
-    <?php if (isset($_REQUEST["piletid"]) ): ?>
+<!--    tabel piletid-->
+        <?php if (isset($_REQUEST["piletid"]) ): ?>
         <div>
             <h2>Tabel piletid</h2>
 
@@ -91,11 +106,14 @@ if (isset($_GET["kustutaHirmumaja"])) {
                 </tr>
                 </thead>
                 <tbody>
+<!--           php funktsioon-->
                 <?php piletid(); ?>
                 </tbody>
             </table>
         </div>
 
+
+<!--    tabel hirmumaja-->
     <?php elseif (isset($_REQUEST["hirmumaja"]) ): ?>
         <div>
             <h2>Tabel hirmumaja</h2>
@@ -111,11 +129,14 @@ if (isset($_GET["kustutaHirmumaja"])) {
                 </tr>
                 </thead>
                 <tbody>
+                <!-- php funktsioon-->
                 <?php hirmumaja(); ?>
                 </tbody>
             </table>
         </div>
 
+
+<!-- tabel kasutajad-->
     <?php else: ?>
         <div>
             <h2>Tabel kasutajad</h2>
@@ -131,6 +152,7 @@ if (isset($_GET["kustutaHirmumaja"])) {
                 </tr>
                 </thead>
                 <tbody>
+                <!-- php funktsioon-->
                 <?php kasutajad(); ?>
                 </tbody>
             </table>
@@ -139,10 +161,8 @@ if (isset($_GET["kustutaHirmumaja"])) {
         </div>
     </section>
 </main>
+<!--footer-->
     <?php include '../elemendid/footer.php'; ?>
 </body>
 </html>
-
-
-
 <?php

@@ -1,4 +1,7 @@
+/*stiilid on ainult piletite välimuse ja ka input*/
 
+
+/*pileti stiilid*/
 .Piletid {
     margin: 0;
     padding: 0;
@@ -55,6 +58,9 @@
 
 
 
+
+/*ostukorvi stiilid*/
+
 .ostukorv h3 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -67,22 +73,22 @@
 
 
 
-/* Стили для внешнего вида чекбокса */
+/* ulejaanud stiilid */
 
 .ostukorv input[type="submit"] {
-    background-color: #ff4500; /* Оранжевый цвет кнопки */
-    color: #fff; /* Белый текст на кнопке */
-    padding: 10px 20px; /* Отступы внутри кнопки */
-    border: none; /* Убираем границу кнопки */
-    border-radius: 5px; /* Закругляем углы кнопки */
-    cursor: pointer; /* Показываем, что кнопка кликабельна */
-    font-size: 16px; /* Размер текста на кнопке */
-    font-family: 'Merriweather', serif; /* Используем шрифт Merriweather */
+    background-color: #ff4500;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
     margin-right: 10px;
 }
 
 .ostukorv input[type="submit"]:hover {
-    background-color: #ff6a00; /* Изменяем цвет кнопки при наведении */
+    background-color: #ff6a00;
 }
 .makse{
     font-size: 20px;
@@ -95,21 +101,21 @@
 
 
 .makseViisid label {
-    display: block; /* Размещаем метки на новой строке */
-    margin-bottom: 5px; /* Отступ снизу для меток */
+    display: block;
+    margin-bottom: 5px;
 }
 
 .makseViisid input[type="text"],
 .makseViisid input[type="submit"] {
-    width: calc(50% - 5px); /* Ширина полей ввода и кнопки */
-    padding: 10px; /* Внутренний отступ */
-    margin-bottom: 10px; /* Отступ снизу */
-    border: 1px solid #ccc; /* Граница */
-    border-radius: 5px; /* Закругление углов */
+    width: calc(50% - 5px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .makseViisid input[type="submit"] {
-    width: 100%; /* Ширина кнопки на 100% */
+    width: 100%;
 
 }
 

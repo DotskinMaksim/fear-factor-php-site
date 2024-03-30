@@ -1,8 +1,12 @@
+<!--see leht on kasutaja põhiteabega saidi sisenemispunkt-->
+
 <?php
 session_start();
 require_once ('funktsioonid.php');
+//ühendage vajalikud failid
 
 
+//et saaksite brauseris koodi lugeda
 if (isset($_GET['code'])) {
     die(highlight_file(__FILE__, 1));
 }
@@ -16,61 +20,62 @@ if (isset($_GET['code'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hirmude maja</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<!--funktsioon lehe laadimisel-->
 <body onload="onLoad()">
 <header>
     <div class="konteiner">
+<!-- kui kasutaja on sisse logitud, kuvame tema nimega tervituse ja kui ei, siis lihtsalt tervitus-->
         <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
             <h1 class="tervitamine">Tere tulemast hirmude majja, <?php echo $_SESSION['kasutajaNimi'];?>!</h1>
         <?php else : ?>
             <h1 class="tervitamine">Tere tulemast hirmude majja!</h1>
         <?php endif; ?>
-
-
+<!-- navigeerimismenüü-->
         <nav>
             <ul>
                 <li><a href="index.php">Info</a></li>
-
                 <li><a href="sisenes/sisenes.php">Sisenes</a></li>
 
+<!-- kuva menüüelemendid olenevalt kasutaja olekust-->
                 <?php if (isset($_SESSION['kasutajaNimi']) != null) : ?>
-            <?php if (!onAdmin()) : ?>
-                    <li><a href="ostamine/ostamine.php">Osta pilet</a></li>
-                    <li><a href="ostamine/omaPiletid.php">Minu piletid</a></li>
-                <?php else : ?>
-                    <li><a href="admin/tabelid.php">Admini paneel</a></li>
-                <?php endif; ?>
+            <!--  kui pole admin-->
+                    <?php if (!onAdmin()) : ?>
+                        <li><a href="ostamine/ostamine.php">Osta pilet</a></li>
+                        <li><a href="ostamine/omaPiletid.php">Minu piletid</a></li>
+            <!--  kui admin-->
+                    <?php else : ?>
+                        <li><a href="admin/tabelid.php">Admini paneel</a></li>
+                    <?php endif; ?>
                     <li><a href="autoriseerimine/logiValja.php">Logi välja</a> </li>
+            <!-- kui kasutaja pole sisse logitud-->
                 <?php else : ?>
                     <li><a href="autoriseerimine/logiSisse.php">Logi sisse</a></li>
                     <li><a href="autoriseerimine/registreerimine.php">Registreeri</a></li>
-
-
-            <?php endif; ?>
+                <?php endif; ?>
             </ul>
         </nav>
     </div>
 </header>
 <main class="koduleht-main">
+<!-- sissejuhatus-->
     <section class="intro">
         <div class="konteiner">
             <h2>Hirmud muutuvad reaalsuseks</h2>
             <p>Valmistuge uskumatuks sukeldumiseks õudusmaailma, kus miski pole see, mis näib.</p>
         </div>
     </section>
+
+<!-- kirjeldus-->
     <section class="kirjeldus">
         <div class="konteiner">
             <h2>Kirjeldus</h2>
             <p>Tere tulemast õuduse maailma, kus ootavad teid kõige kohutavamad katsumused. Valmistuge oma piire ja hirme proovile panema.</p>
             <div>
+<!--   rohkem infot nupp selle kohta-->
             <?php if (!isset($_REQUEST['info'])) : ?>
-
-            <a href="index.php?info">Rohkem info</a>
+                <a href="index.php?info">Rohkem info</a>
             <?php else : ?>
                 <a href="index.php">Sulge</a>
 
@@ -78,8 +83,8 @@ if (isset($_GET['code'])) {
             </div>
         </div>
     </section>
+<!-- kui klõpsasite rohkem teavet-->
     <?php if (isset($_REQUEST['info'])) : ?>
-
         <section class="rohkem-info">
             <div class="konteiner">
                 <h2>Hirmude Maja</h2>
@@ -91,11 +96,12 @@ if (isset($_GET['code'])) {
         </section>
     <?php endif; ?>
 
+<!--töötaja teave-->
     <section class="meist">
         <div class="konteiner">
             <h2>Meist</h2>
             <p>Oleme professionaalsetest õudusfilmitegijatest koosnev meeskond, kes loob teie nautimiseks kõige põnevamaid hirmutubasid.</p>
-            <!-- Здесь можно добавить фотографии или видео с комнатами страха -->
+            <!-- Pildid-->
             <div class="galerii">
                 <img src="pildid/info1.jpeg" alt="Kirjeldus 1">
                 <img src="pildid/info2.jpeg" alt="Kirjeldus 2">
@@ -103,6 +109,7 @@ if (isset($_GET['code'])) {
             </div>
         </div>
     </section>
+<!-- sidevahendid-->
     <section class="kontakt">
         <div class="konteiner">
             <h2>Võta meiega ühendust</h2>
@@ -110,12 +117,9 @@ if (isset($_GET['code'])) {
             <p>Meil: info@hirmude-maja.ee</p>
         </div>
     </section>
-
-    <!-- Дополнительные разделы можно добавить по мере необходимости -->
 </main>
-
+<!-- footer-->
     <?php include 'elemendid/footer.php'; ?>
-
 </body>
 </html>
 

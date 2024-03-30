@@ -1,9 +1,18 @@
 <?php
+//siin on funktsioonid mis kasutakse ainult admini paneelis
+
+
+//ühendage vajalikud failid
 require_once('../konf.php');
 require_once('../funktsioonid.php');
 
 
-function kasutajad()
+
+//kõigil funktsioonidel on sama struktuur.
+//Seal on funktsioon iga tabeli kuvamiseks ja funktsioon iga tabeli kustutamiseks
+
+
+function kasutajad()//kasutaja tabeli naitamine
 {
     global $yhendus;
 
@@ -32,8 +41,8 @@ function kasutajad()
                     <form method='POST'>
                         <input type='hidden' name='kasutajaId' value='$id'>
                         <select name='adminStatus' onchange='this.form.submit()'>
-                            <option value='1' ".($onAdmin == 1 ? "selected" : "") .">Jah</option>
-                            <option value='0' ". ($onAdmin == 0 ? "selected" : ""). ">Ei</option>
+                            <option value='1' ".($onAdmin == 1 ?  "selected" : "") .">Jah</option>
+                            <option value='0' ". ($onAdmin == 0 ?  "selected": ""). ">Ei</option>
                         </select>
                     </form>
                 </td>
@@ -47,6 +56,8 @@ function kasutajad()
 function kustutaKasutaja($kasutajaId)
 {
     global $yhendus;
+
+//    kustutame koik võõrvõtid esimeselt ja ainult parast kustutame kasutaja
 
     $delete_kask = $yhendus->prepare("DELETE FROM pilet WHERE kasutajaId=?");
     $delete_kask->bind_param("i", $kasutajaId);
@@ -75,7 +86,7 @@ function kustutaKasutaja($kasutajaId)
     exit();
 }
 
-function piletid()
+function piletid()//pileti tabeli naitamine
 {
     global $yhendus;
 
@@ -103,6 +114,8 @@ function kustutaPilet($piletId)
 {
     global $yhendus;
 
+//    siin pole võõrvõti
+
     $delete_kask = $yhendus->prepare("DELETE FROM pilet WHERE id=?");
     $delete_kask->bind_param("i", $piletId);
     $delete_kask->execute();
@@ -112,8 +125,10 @@ function kustutaPilet($piletId)
     header("location: tabelid.php?piletid");
     exit();
 }
-function hirmumaja()
+function hirmumaja() //hirmumaja tabeli naitamine
 {
+
+
     global $yhendus;
 
 
@@ -137,6 +152,8 @@ function hirmumaja()
 function kustutaHirmumaja($hirmId)
 {
     global $yhendus;
+
+//  siin pole võõrvõti
 
     $delete_kask = $yhendus->prepare("DELETE FROM hirmumaja WHERE id=?");
     $delete_kask->bind_param("i", $hirmId);

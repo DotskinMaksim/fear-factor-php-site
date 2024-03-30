@@ -1,4 +1,7 @@
+// skript mis kasutakse ainult autoriseerimis lehtel
 
+
+// keelake alglaadimisel olevad nupud
 function onLoadSisse(){
     document.getElementById('logiSisse').disabled=true;
 }
@@ -7,6 +10,7 @@ function onLoadReg(){
 }
 
 function logiSisseKontroll(){
+    // nuppude valgustuse täiteväljade juhtimine - sisse logimine
     let nimi  =document.getElementById('nimi');
     let parool  =document.getElementById('parool');
 
@@ -21,6 +25,8 @@ function logiSisseKontroll(){
     }
 }
 function registreeriKontroll(){
+    // nuppude valgustuse täiteväljade juhtimine - registreerimine
+
     let nimi  =document.getElementById('nimiReg');
     let parool1  =document.getElementById('parool1');
     let parool2  =document.getElementById('parool2');

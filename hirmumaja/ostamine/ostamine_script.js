@@ -1,6 +1,7 @@
+// siin on script mis kasutakse ainult ostamise lehel
 
 
-
+// keelake alglaadimisel olevad nupud
 function onLoadOst(){
     document.getElementById('osta').disabled=true;
 }
@@ -10,6 +11,7 @@ function onLoadMaks(){
 
 
 function ostamineKontroll() {
+    // nõusoleku linnukese tiheduse kontroll ja makseviisi valik
     let checkbox = document.getElementById('checkbox');
     let select = document.getElementById('selectMakseviisid');
     let osta = document.getElementById('osta');
@@ -24,12 +26,12 @@ function ostamineKontroll() {
 
 
 function saadamineKontroll(){
+    // pangakaardi sisestusväljade ja nende tüübi täielikkuse kontroll
+
     let nimi=document.getElementById('kardiNimi');
     let number  =document.getElementById('kardiNumber');
     let kehtivus  =document.getElementById('kehtivus');
     let cvv  =document.getElementById('cvv').value.trim();
-
-
 
 
     if (nimi.value.trim() !== "" && number.value.trim() !== "" &&

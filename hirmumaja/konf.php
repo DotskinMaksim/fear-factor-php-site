@@ -1,4 +1,6 @@
 <?php
+//võtame sql andmed ja loome sellest sql päring
+
 $kasutaja='d123173_maksdot';
 $serverinimi='localhost';
 //$serverinimi='d123173.mysql.zonevs.eu';

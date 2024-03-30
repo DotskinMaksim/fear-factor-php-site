@@ -1,4 +1,4 @@
-/* Стили для основного контейнера */
+/*autoriseerimis formite stiilid*/
 .logiSisse {
     margin: 50px auto;
     padding: 20px;
@@ -7,13 +7,12 @@
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
 
-/* Стили для заголовка формы */
 .logiSisse h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Стили для полей ввода */
+
 .logiSisse input[type="text"],
 .logiSisse input[type="password"] {
     width: 95%;
@@ -23,7 +22,7 @@
     border-radius: 5px;
 }
 
-/* Стили для кнопок */
+
 .logiSisse input[type="submit"] {
     width: 100%;
     padding: 10px;
@@ -39,19 +38,11 @@
     background-color: #ff6a00;
 }
 
-/* Стили для ссылки "Регистрация" */
+
 .logiSisse span {
     display: block;
     text-align: center;
 }
-
-/*.logiSisse span a {*/
-/*    color: blue;*/
-/*    text-decoration: none;*/
-/*}*/
-
-
-
 
 .registr {
     margin: 50px auto;
@@ -101,6 +92,8 @@
 #vastusParool {
     color: red;
 }
+
+/*mitteaktiivse nupu välimuse stiil*/
 input[type="submit"]:disabled {
     background-color: #ccc;
     color: #666;
