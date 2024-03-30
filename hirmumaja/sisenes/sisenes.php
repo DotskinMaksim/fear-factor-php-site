@@ -1,7 +1,10 @@
-<!--see on leht inimeste vaatamiseks hirmumajas ja -->
-<!--ka pargitöötaja jaoks sisenevate ja väljuvate inimeste jälgimiseks-->
 <?php
 session_start();
+
+
+//see on leht inimeste vaatamiseks hirmumajas ja -->
+//ka pargitöötaja jaoks sisenevate ja väljuvate inimeste jälgimiseks-->
+
 
 //ühendage vajalikud failid
 
@@ -153,6 +156,3 @@ pileti id ja tema id mida parast kasutalaj kustutakse pilet ja temal alustab nä
 
 </body>
 </html>
-
-
-

@@ -1,4 +1,7 @@
 <?php
+
+//siin on funktsioonid mis kasutakse ainult autorisserimis formides
+
 require_once ('../konf.php');
 require_once ('../funktsioonid.php');
 //ühendage vajalikud failid

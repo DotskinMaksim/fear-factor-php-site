@@ -1,6 +1,8 @@
-<!--sellel lehel saab kasutaja vaadata juba ostetud pileteid-->
 <?php
 session_start();
+
+//sellel lehel saab kasutaja vaadata juba ostetud pileteid
+
 require_once ('../konf.php');
 require_once ('../funktsioonid.php');
 require_once ('ostamine_funktsioonid.php');
@@ -63,4 +65,4 @@ if (isset($_GET['code'])) {
 <!--footer-->
 <?php include '../elemendid/footer.php'; ?>
 </body>
-</html><?php
+</html>

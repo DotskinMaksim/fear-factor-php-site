@@ -1,8 +1,10 @@
 <?php
+session_start();
+
+
 //siin on paneel hirmuamaja, kasutaja ja pileti tabeliga
 //mis saab kasutada ainult admin
 
-session_start();
 require_once ('../funktsioonid.php');
 require_once ('tabelid_funktsioonid.php');
 //ühendage vajalikud failid
@@ -165,4 +167,3 @@ if (isset($_GET["kustutaHirmumaja"])) {
     <?php include '../elemendid/footer.php'; ?>
 </body>
 </html>
-<?php

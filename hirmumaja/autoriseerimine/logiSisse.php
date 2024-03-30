@@ -1,7 +1,9 @@
 <?php
+session_start();
+
 //siin on sisse logimis form
 
-session_start();
+
 require_once ('../konf.php');
 require_once ('../funktsioonid.php');
 require_once ('autoriseerimine_funktsioonid.php');

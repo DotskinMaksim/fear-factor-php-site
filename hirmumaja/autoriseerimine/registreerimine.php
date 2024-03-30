@@ -1,6 +1,9 @@
-<!--siin on registrerimise form-->
 <?php
 session_start();
+
+//siin on registrerimise form
+
+
 require_once ('../konf.php');
 require_once ('../funktsioonid.php');
 require_once ('autoriseerimine_funktsioonid.php');

@@ -1,5 +1,8 @@
-<!--siin on funktsioonid mis kasutakse ainult ostamise lehel-->
 <?php
+
+
+//siin on funktsioonid mis kasutakse ainult ostamise lehel
+
 
 //ühendage vajalikud failid
 require_once('../konf.php');

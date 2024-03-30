@@ -1,7 +1,10 @@
-<!--see leht on mõeldud pileti ostmiseks, makseviisi lisamiseks kaardi näol, -->
-<!--ostukorvi vaatamiseks ja piletite eest tasumiseks-->
 <?php
 session_start();
+
+//see leht on mõeldud pileti ostmiseks, makseviisi lisamiseks kaardi näol, 
+//ostukorvi vaatamiseks ja piletite eest tasumiseks
+
+
 require_once ('../konf.php');
 require_once ('../funktsioonid.php');
 require_once ('ostamine_funktsioonid.php');
@@ -329,4 +332,3 @@ if (isset($_REQUEST['saada'])){
 
 </body>
 </html>
-<?php

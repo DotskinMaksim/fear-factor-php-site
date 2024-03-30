@@ -1,6 +1,6 @@
-<!--siin on funktsioonid mis kasutakse igas failis-->
-
 <?php
+//siin on funktsioonid mis kasutakse igas failis
+
 require_once ('konf.php');
 
 //seadke aja arvutamiseks Eesti ajavöönd
@@ -11,5 +11,3 @@ function onAdmin(){
     //tagastab true või false
     return isset($_SESSION['onAdmin']) && $_SESSION['onAdmin'];
 }
-
-

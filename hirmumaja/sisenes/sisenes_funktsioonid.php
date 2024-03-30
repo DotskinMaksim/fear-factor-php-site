@@ -128,6 +128,3 @@ function sisenes()
 
     $select_kask->close();
 }
-
-
-

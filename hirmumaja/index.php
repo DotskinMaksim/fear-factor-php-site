@@ -1,7 +1,9 @@
-<!--see leht on kasutaja põhiteabega saidi sisenemispunkt-->
-
 <?php
 session_start();
+
+//see leht on kasutaja põhiteabega saidi sisenemispunkt
+
+
 require_once ('funktsioonid.php');
 //ühendage vajalikud failid
 
@@ -122,6 +124,3 @@ if (isset($_GET['code'])) {
     <?php include 'elemendid/footer.php'; ?>
 </body>
 </html>
-
-
-
