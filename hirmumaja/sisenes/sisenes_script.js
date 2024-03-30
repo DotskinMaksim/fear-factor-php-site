@@ -60,13 +60,13 @@ function uuendaAeg() {
                 }
             }
         }
-        // moodustage ajastring vormingus t : m : s
+// moodustage ajastring vormingus t : m : s
         var aegString =
             (tundid < 10 ? "0" : "") + tundid + " : " +
             (minutid < 10 ? "0" : "") + minutid + " : " +
             (sekundid < 10 ? "0" : "") + sekundid;
 
-        // uuendame praeguse elemendi aeg sisu
+// uuendame praeguse elemendi aeg sisu
         aegElements[i].innerHTML = aegString;
     }
 }
