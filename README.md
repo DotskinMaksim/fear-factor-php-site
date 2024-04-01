@@ -34,6 +34,7 @@ Siin saab vaadata olemasolevaid makseviise ja lisada uue vormi kaudu ning vajadu
 Siin saab vaadata ostukorvi, vajadusel midagi eemaldada ning lugeda läbi lepingu maksmise kohta eelnevalt lisatud makseviisiga.
 
 
+
 ### minuPiletid.php
 Siin saab ostja vaadata juba ostetud pileteid, näha nende kehtivusaega ja pileti ID-d ning oma ID-d, et hiljem sisenemisel näidata.
 
