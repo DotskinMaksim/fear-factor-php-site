@@ -13,15 +13,15 @@
 Veebisaidil on järgmised leheküljed:
 
 
-### index.php
+### index.php:
 Põhilised kohad, kontaktid ja fotod, avaleht.
 
 
-### sisenes.php
+### sisenes.php:
 Lehekülg, kus saab vaadata hirmumajas viibivaid inimesi ja nende viibimise aega, ning administraator saab märkida külastajate sisenemise ja väljumise nende pileti ID ja ostja ID kaudu. On kehtivuse kontroll pileti ja ID järgi.
 
 
-### ostamine.php
+### ostamine.php:
 Lehekülg, kus on 3 sektsiooni - 
 
 #### Vaatamine:
@@ -35,15 +35,15 @@ Siin saab vaadata ostukorvi, vajadusel midagi eemaldada ning lugeda läbi leping
 
 
 
-### minuPiletid.php
+### minuPiletid.php:
 Siin saab ostja vaadata juba ostetud pileteid, näha nende kehtivusaega ja pileti ID-d ning oma ID-d, et hiljem sisenemisel näidata.
 
 
-### tabelid.php
+### tabelid.php:
 See on administraatoripaneel, kus ta saab vaadata kõiki andmebaasi tabeleid, välja arvatud makseviisid. Kasutajad, piletid, hirmumaja. Samuti saab ta kustutada mis tahes kirjeid tabelist ning määrata uusi administraatoreid.
 
 
-### registreerimine/sisseLogimine.php
+### registreerimine/sisseLogimine.php:
 Sisselogimis- ja registreerimisvormid. Parooli turvalisuse kontrollimine.
 
 ## Järeldus
