@@ -82,6 +82,6 @@ Sisselogimis- ja registreerimisvormid. Parooli turvalisuse kontrollimine.
 ## Järeldus
 Kõik leheküljed omavad ühist hirmumaja stiilis disaini, kogu kood on kommenteeritud, iga lehekülje funktsioonid SQL-operatsioonide ja muude funktsioonidega on eraldi PHP-failis. Samuti koos skripti ja mõnel juhul stiilidega. See on tehtud arenduse optimeerimise ja kasutusmugavuse tagamiseks.
 
-##Link
+## Link
 [Hirmude maja](https://maksimdotskin22.thkit.ee/andmebaasid/hirmumaja/index.php)
 
