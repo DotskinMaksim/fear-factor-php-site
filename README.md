@@ -1,18 +1,18 @@
 # Hirmude maja
 
 ## Sisukord
-1. [Projekti kohta](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md##Projekti-kohta)
-2. [Loojad](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md##Loojad)
-3. [Projekti eesmärgid](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md##Projekti-eesmärgid)
-4. [Kirjeldus](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md##Kirjeldus)
-   - [Info](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md###index.php)
-   - [Sisenes](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md###sisenes.php)
-   - [Ostamine](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md###ostamine.php)
-   - [Minu piletid](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md###minuPiletid.php)
-   - [Tabelid](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md###tabelid.php)
-   - [Autoriseerimine](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md###registreerimine/sisseLogimine.php)
-5. [Järeldus](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md##Järeldus)
-6. [Link](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md##Link)
+1. [Projekti kohta](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#Projekti-kohta)
+2. [Loojad](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#Loojad)
+3. [Projekti eesmärgid](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#Projekti-eesmärgid)
+4. [Kirjeldus](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#Kirjeldus)
+   - [Info](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#index.php)
+   - [Sisenes](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#sisenes.php)
+   - [Ostamine](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#ostamine.php)
+   - [Minu piletid](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#minuPiletid.php)
+   - [Tabelid](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#tabelid.php)
+   - [Autoriseerimine](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#registreerimine/sisseLogimine.php)
+5. [Järeldus](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#Järeldus)
+6. [Link](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/README.md#Link)
 
 
 ## Projekti kohta
