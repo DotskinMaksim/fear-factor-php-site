@@ -28,52 +28,52 @@ Saiti on vaja hirmumajja pileti ostmiseks ja külastajate kontrollimiseks
 - [x] Registreerimine saidil
 - [x] Andmebaasiga ühendus
       
-## Kirjeldus
+# Kirjeldus
 Veebisaidil on järgmised leheküljed:
 
 
-### index.php:
+## index.php:
 Põhilised kohad, kontaktid ja fotod, avaleht.
 
 
-### sisenes.php:
+## sisenes.php:
 Lehekülg, kus saab vaadata hirmumajas viibivaid inimesi ja nende viibimise aega, ning administraator saab märkida külastajate sisenemise ja väljumise nende pileti ID ja ostja ID kaudu. On kehtivuse kontroll pileti ja ID järgi.
 ![pilt](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/hirmumaja/pildid/sisenes.png)
 
 
 
-### ostamine.php:
+## ostamine.php:
 Lehekülg, kus on 3 sektsiooni - 
 
 
-#### Vaatamine:
+### Vaatamine:
 Siin saab ostja vaadata olemasolevaid piletitüüpe, nende hindu ja muud teavet ning lisada need ostukorvi.
 ![pilt](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/hirmumaja/pildid/vaatamine.png)
 
 
-#### Makseviisid:
+### Makseviisid:
 Siin saab vaadata olemasolevaid makseviise ja lisada uue vormi kaudu ning vajadusel kustutada.
 
 ![pilt](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/hirmumaja/pildid/makseviisid.png)
 
 
-#### Ostukorv:
+### Ostukorv:
 Siin saab vaadata ostukorvi, vajadusel midagi eemaldada ning lugeda läbi lepingu maksmise kohta eelnevalt lisatud makseviisiga.
 ![pilt](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/hirmumaja/pildid/ostukorv.png)
 
 
 
-### minuPiletid.php:
+## minuPiletid.php:
 Siin saab ostja vaadata juba ostetud pileteid, näha nende kehtivusaega ja pileti ID-d ning oma ID-d, et hiljem sisenemisel näidata.
 ![pilt](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/hirmumaja/pildid/minupiletid.png)
 
 
-### tabelid.php:
+## tabelid.php:
 See on administraatoripaneel, kus ta saab vaadata kõiki andmebaasi tabeleid, välja arvatud makseviisid. Kasutajad, piletid, hirmumaja. Samuti saab ta kustutada mis tahes kirjeid tabelist ning määrata uusi administraatoreid.
 ![pilt](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/hirmumaja/pildid/admin.png)
 
 
-### registreerimine/sisseLogimine.php:
+## registreerimine/sisseLogimine.php:
 Sisselogimis- ja registreerimisvormid. Parooli turvalisuse kontrollimine.
 ![pilt](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/hirmumaja/pildid/logisisse.png)
 ![pilt](https://github.com/MaksimDotskin/Hirmude-maja/blob/main/hirmumaja/pildid/registreerimine.png)
